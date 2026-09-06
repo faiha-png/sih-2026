@@ -1,0 +1,357 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"outline":"#737686","inverse-surface":"#2e3039","primary-container":"#2563eb","on-tertiary-container":"#ffede6","error":"#ba1a1a","on-primary-fixed":"#00174b","primary":"#004ac6","on-primary-container":"#eeefff","on-error-container":"#93000a","surface-bright":"#faf8ff","surface-variant":"#e1e2ed","surface-container":"#ededf9","secondary-fixed":"#d3e4fe","background":"#faf8ff","tertiary-container":"#bc4800","surface":"#faf8ff","tertiary":"#943700","on-primary":"#ffffff","secondary-container":"#d0e1fb","tertiary-fixed-dim":"#ffb596","on-error":"#ffffff","surface-tint":"#0053db","primary-fixed":"#dbe1ff","surface-container-low":"#f3f3fe","inverse-primary":"#b4c5ff","on-tertiary-fixed-variant":"#7d2d00","inverse-on-surface":"#f0f0fb","surface-container-highest":"#e1e2ed","on-surface-variant":"#434655","surface-container-high":"#e7e7f3","on-secondary-fixed":"#0b1c30","on-secondary-container":"#54647a","surface-container-lowest":"#ffffff","outline-variant":"#c3c6d7","error-container":"#ffdad6","tertiary-fixed":"#ffdbcd","on-tertiary-fixed":"#360f00","surface-dim":"#d9d9e5","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-background":"#191b23","on-primary-fixed-variant":"#003ea8","on-surface":"#191b23","on-secondary-fixed-variant":"#38485d","secondary-fixed-dim":"#b7c8e1","secondary":"#505f76","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"md":"24px","xs":"4px","margin-mobile":"16px","lg":"40px","sm":"12px","margin-desktop":"48px","gutter":"24px","xl":"64px","base":"8px"},"fontFamily":{"headline-md":["Inter"],"label-md":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"display-lg":["Inter"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+    </head>
+    <body class="bg-surface font-body-md text-on-surface">
+        <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50">
+            <div class="p-md flex items-center gap-base">
+                <span class="material-symbols-outlined text-primary">safety_check</span>
+                <span class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase">Site Safety</span>
+            </div>
+            <nav class="flex-1 px-sm mt-md flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
+                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="overview.html">
+                    <span class="material-symbols-outlined mr-md">dashboard</span>
+                    Overview
+                </a>
+                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="workers" href="worker_details.html">
+                    <span class="material-symbols-outlined mr-md">engineering</span>
+                    Workers
+                </a>
+                <a aria-current="page" class="flex items-center h-12 px-md rounded-xl font-label-md transition-all bg-primary text-on-primary shadow-sm" data-path="watches" href="watches.html">
+                    <span class="material-symbols-outlined mr-md">visibility</span>
+                    Watches
+                </a>
+            </nav>
+            <div class="p-md mt-auto bg-surface-container border-t border-outline-variant/30 flex flex-col gap-sm">
+                <div class="flex items-center gap-sm">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-label-md text-label-md text-on-surface">Site Supervisor</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">Construction Site A</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-xs text-[12px] font-label-sm text-on-surface-variant">
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                    System Online
+                </div>
+            </div>
+        </aside>
+        <div class="pl-72">
+            <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+                <div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    Construction Site A
+                </div>
+                <div class="flex items-center gap-md">
+                    <div class="flex items-center gap-xs px-sm py-xs bg-primary/10 rounded-full border border-primary/20">
+                        <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                        <span class="text-[11px] font-label-sm text-primary uppercase font-bold tracking-tighter">Live Feed</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+                    </div>
+                </div>
+            </header>
+            <main class="pt-16 min-h-screen bg-surface">
+                <div class="flex flex-col w-full p-md gap-lg max-w-[1440px] mx-auto">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="font-headline-lg text-headline-lg text-on-surface">Watches</h1>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-xs">Manage smart watch assignments and battery levels.</p>
+                        </div>
+                        <button class="h-12 px-md bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center shadow-sm hover:bg-primary/90 transition-colors" id="assignWatchBtnMain">
+                            <span class="material-symbols-outlined mr-sm text-[20px]">add</span>
+                            Assign Watch
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                        <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Connected</span>
+                                <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                    <span class="material-symbols-outlined text-[14px]">link</span>
+                                    Online
+                                </span>
+                            </div>
+                            <div class="mt-md flex items-baseline gap-sm">
+                                <span class="font-headline-lg text-[36px] font-bold text-on-surface tracking-tight">48</span>
+                                <span class="font-label-md text-label-md text-primary font-medium">↑ 96%</span>
+                            </div>
+                            <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">48 / 50 online devices</span>
+                        </div>
+                        <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-semibold">Offline</span>
+                                <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+                                    <span class="material-symbols-outlined text-[14px]">link_off</span>
+                                    Disconnected
+                                </span>
+                            </div>
+                            <div class="mt-md flex items-baseline gap-sm">
+                                <span class="font-headline-lg text-[36px] font-bold text-error tracking-tight">2</span>
+                                <span class="font-label-md text-label-md text-error font-medium">Devices</span>
+                            </div>
+                            <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Requires reconnection</span>
+                        </div>
+                        <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">Low Battery</span>
+                                <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+                                    <span class="material-symbols-outlined text-[14px]">battery_alert</span>
+                                    Warning
+                                </span>
+                            </div>
+                            <div class="mt-md flex items-baseline gap-sm">
+                                <span class="font-headline-lg text-[36px] font-bold text-tertiary tracking-tight">3</span>
+                                <span class="font-label-md text-label-md text-tertiary font-medium">&lt; 15%</span>
+                            </div>
+                            <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Needs docking &amp; charge</span>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-surface-container-low border-b border-outline-variant/30">
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Watch ID</th>
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Worker</th>
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Battery</th>
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Last Update</th>
+                                        <th class="py-sm px-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="watchTableBody">
+                                    <tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">#12</td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface">Raju</td>
+                                        <td class="py-sm px-md">
+                                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                                Assigned
+                                            </span>
+                                        </td>
+                                        <td class="py-sm px-md">
+                                            <div class="flex items-center gap-sm">
+                                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary" style="width: 82%"></div>
+                                                </div>
+                                                <span class="font-body-md text-body-md text-on-surface-variant">82%</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">12 sec ago</td>
+                                        <td class="py-sm px-md text-right">
+                                            <button class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">#27</td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface">Suresh</td>
+                                        <td class="py-sm px-md">
+                                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                                Assigned
+                                            </span>
+                                        </td>
+                                        <td class="py-sm px-md">
+                                            <div class="flex items-center gap-sm">
+                                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary" style="width: 71%"></div>
+                                                </div>
+                                                <span class="font-body-md text-body-md text-on-surface-variant">71%</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">8 sec ago</td>
+                                        <td class="py-sm px-md text-right">
+                                            <button class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">#08</td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface">Anil</td>
+                                        <td class="py-sm px-md">
+                                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                                Assigned
+                                            </span>
+                                        </td>
+                                        <td class="py-sm px-md">
+                                            <div class="flex items-center gap-sm">
+                                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary" style="width: 92%"></div>
+                                                </div>
+                                                <span class="font-body-md text-body-md text-on-surface-variant">92%</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">5 sec ago</td>
+                                        <td class="py-sm px-md text-right">
+                                            <button class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">#03</td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">—</td>
+                                        <td class="py-sm px-md">
+                                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                                                <span class="material-symbols-outlined text-[14px]">watch</span>
+                                                Available
+                                            </span>
+                                        </td>
+                                        <td class="py-sm px-md">
+                                            <div class="flex items-center gap-sm">
+                                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                                    <div class="h-full bg-primary" style="width: 100%"></div>
+                                                </div>
+                                                <span class="font-body-md text-body-md text-on-surface-variant">100%</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">—</td>
+                                        <td class="py-sm px-md text-right">
+                                            <button class="assignBtn h-10 px-sm bg-primary/10 text-primary rounded-lg font-label-md text-label-md hover:bg-primary/20 transition-colors" data-watch="#03">Assign</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-lowest transition-colors">
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">#04</td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">—</td>
+                                        <td class="py-sm px-md">
+                                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+                                                <span class="material-symbols-outlined text-[14px]">battery_charging_full</span>
+                                                Charging
+                                            </span>
+                                        </td>
+                                        <td class="py-sm px-md">
+                                            <div class="flex items-center gap-sm">
+                                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                                    <div class="h-full bg-tertiary" style="width: 63%"></div>
+                                                </div>
+                                                <span class="font-body-md text-body-md text-on-surface-variant">63%</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">—</td>
+                                        <td class="py-sm px-md text-right">
+                                            <span class="font-label-md text-label-md text-on-surface-variant">—</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="assignModal">
+                        <div class="bg-surface rounded-xl shadow-xl border border-outline-variant/30 w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300" id="assignModalContent">
+                            <div class="px-md py-sm border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-lowest">
+                                <h2 class="font-headline-md text-headline-md text-on-surface">Assign Watch</h2>
+                                <button class="text-on-surface-variant hover:text-on-surface transition-colors p-xs rounded-full hover:bg-surface-container-high" id="closeModalBtn">
+                                    <span class="material-symbols-outlined">close</span>
+                                </button>
+                            </div>
+                            <div class="p-md bg-surface-container-lowest">
+                                <div class="flex flex-col gap-sm" id="step1">
+                                    <label class="font-label-md text-label-md text-on-surface">Select Watch</label>
+                                    <select class="h-12 w-full px-md rounded-lg border border-outline bg-surface-container-lowest font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none" id="watchSelect">
+                                        <option value="#03">#03 (Available, 100%)</option>
+                                    </select>
+                                    <label class="font-label-md text-label-md text-on-surface mt-sm">Select Worker</label>
+                                    <select class="h-12 w-full px-md rounded-lg border border-outline bg-surface-container-lowest font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none" id="workerSelect">
+                                        <option value="Babu">Babu</option>
+                                        <option value="Ramesh">Ramesh</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="px-md py-sm bg-surface-container-low border-t border-outline-variant/30 flex justify-end gap-sm">
+                                <button class="h-10 px-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high rounded-lg transition-colors" id="cancelBtn">Cancel</button>
+                                <button class="h-10 px-md bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary/90 transition-colors" id="confirmAssignBtn">Confirm Assignment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('assignModal');
+        const modalContent = document.getElementById('assignModalContent');
+        const openBtns = document.querySelectorAll('.assignBtn');
+        const mainOpenBtn = document.getElementById('assignWatchBtnMain');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const confirmBtn = document.getElementById('confirmAssignBtn');
+        const watchSelect = document.getElementById('watchSelect');
+        const workerSelect = document.getElementById('workerSelect');
+        
+        function openModal(watchId = null) {
+            if (watchId) {
+                watchSelect.value = watchId;
+            }
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                openModal(e.target.dataset.watch);
+            });
+        });
+
+        mainOpenBtn.addEventListener('click', () => openModal());
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            const watchId = watchSelect.value;
+            const workerName = workerSelect.value;
+            
+            // Mock updating the table
+            const rows = document.querySelectorAll('#watchTableBody tr');
+            rows.forEach(row => {
+                const idCell = row.querySelector('td:first-child');
+                if (idCell && idCell.textContent === watchId) {
+                    row.innerHTML = `
+                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">${watchId}</td>
+                        <td class="py-sm px-md font-body-md text-body-md text-on-surface">${workerName}</td>
+                        <td class="py-sm px-md">
+                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                Assigned
+                            </span>
+                        </td>
+                        <td class="py-sm px-md">
+                            <div class="flex items-center gap-sm">
+                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 100%"></div>
+                                </div>
+                                <span class="font-body-md text-body-md text-on-surface-variant">100%</span>
+                            </div>
+                        </td>
+                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">Just now</td>
+                        <td class="py-sm px-md text-right">
+                            <button class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">View</button>
+                        </td>
+                    `;
+                }
+            });
+            
+            closeModal();
+        });
+    });
+</script>
+            </main>
+        </div>
+    </body>
+</html>
