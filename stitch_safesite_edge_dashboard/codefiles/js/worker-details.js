@@ -19,4 +19,6 @@ if (worker) {
     worker.activity;
     document.getElementById("heart-rate").textContent =
     worker.readings.heartRate;
+    document.getElementById("skin-temp").textContent =
+    worker.readings.skinTemp + "°";
 }
