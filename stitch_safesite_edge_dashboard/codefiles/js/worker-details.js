@@ -17,4 +17,6 @@ if (worker) {
             : "Safe";
     document.getElementById("worker-activity").textContent =
     worker.activity;
+    document.getElementById("heart-rate").textContent =
+    worker.readings.heartRate;
 }
