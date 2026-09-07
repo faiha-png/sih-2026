@@ -15,4 +15,6 @@ if (worker) {
             : worker.status === "warning"
             ? "Need Attention"
             : "Safe";
+    document.getElementById("worker-activity").textContent =
+    worker.activity;
 }
