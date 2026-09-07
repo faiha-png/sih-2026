@@ -21,4 +21,12 @@ if (worker) {
     worker.readings.heartRate;
     document.getElementById("skin-temp").textContent =
     worker.readings.skinTemp + "°";
+    document.getElementById("spo2").textContent =
+    worker.readings.spo2 + "%";
+
+    document.getElementById("humidity").textContent =
+    worker.readings.humidity + "%";
+
+    document.getElementById("ambient-temp").textContent =
+    worker.readings.ambientTemp + "°";
 }
