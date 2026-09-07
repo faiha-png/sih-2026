@@ -8,4 +8,11 @@ if (worker) {
         `${worker.name} (Watch #${worker.watchId})`;
 
     document.getElementById("risk-score").textContent = worker.risk;
+
+    document.getElementById("worker-status").textContent =
+        worker.status === "critical"
+            ? "Critical Status"
+            : worker.status === "warning"
+            ? "Need Attention"
+            : "Safe";
 }
