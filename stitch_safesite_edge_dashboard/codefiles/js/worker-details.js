@@ -72,4 +72,16 @@ if (worker) {
 
     trendPoint.setAttribute("cx", lastPoint.x);
     trendPoint.setAttribute("cy", lastPoint.y);
+    const ackButton = document.getElementById("btn-ack-alert");
+
+ackButton.addEventListener("click", () => {
+    ackButton.innerHTML = `
+        <span class="material-symbols-outlined text-[18px]">
+            check_circle
+        </span>
+        Alert Acknowledged
+    `;
+
+    ackButton.classList.add("bg-primary", "text-on-primary");
+});
 }
