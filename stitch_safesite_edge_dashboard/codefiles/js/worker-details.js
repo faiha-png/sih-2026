@@ -48,4 +48,28 @@ if (worker) {
 
     riskReasons.appendChild(li);
 });
+    const trendPath = document.getElementById("risk-trend-path");
+    const trendPoint = document.getElementById("risk-trend-point");
+
+    const history = worker.riskHistory;
+
+    const points = history.map((score, index) => {
+        const x = (index / (history.length - 1)) * 100;
+        const y = 90 - (score / 100) * 75;
+
+        return { x, y };
+    });
+
+    const pathData = points
+        .map((point, index) =>
+            `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`
+        )
+        .join(" ");
+
+    trendPath.setAttribute("d", pathData);
+
+    const lastPoint = points[points.length - 1];
+
+    trendPoint.setAttribute("cx", lastPoint.x);
+    trendPoint.setAttribute("cy", lastPoint.y);
 }
