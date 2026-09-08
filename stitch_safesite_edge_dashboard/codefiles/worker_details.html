@@ -114,14 +114,20 @@
                                         <span class="material-symbols-outlined text-[18px]">bed</span>
                                         Mark Resting
                                     </button>
-                                    <button id="btn-ack-alert" class="h-12 px-sm rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors shadow-sm flex items-center justify-center gap-xs">
-                                        <span class="material-symbols-outlined text-[18px]">done_all</span>
-                                        Ack Alert
+                                    <button id="btn-ack-alert"
+                                        onclick="this.innerHTML='<span class=&quot;material-symbols-outlined text-[18px]&quot;>check_circle</span> Alert Acknowledged'; this.classList.add('bg-primary','text-on-primary');"
+                                        class="h-12 px-sm rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors shadow-sm flex items-center justify-center gap-xs">
+                                    <span class="material-symbols-outlined text-[18px]">done_all</span>
+                                    Ack Alert
                                     </button>
-                                    <button class="h-12 px-sm rounded-lg font-label-md text-label-md text-on-error bg-error hover:bg-on-error-container transition-colors shadow-sm flex items-center justify-center gap-xs sm:col-span-2">
-                                        <span class="material-symbols-outlined text-[18px]">local_police</span>
-                                        Dispatch Supervisor
-                                    </button>
+                                    <button
+                                    id="btn-dispatch-supervisor"
+                                    onclick="this.innerHTML='<span class=&quot;material-symbols-outlined text-[18px]&quot;>check_circle</span> Supervisor Dispatched'; this.classList.remove('bg-error','text-on-error'); this.classList.add('bg-primary','text-on-primary');"
+                                    class="h-12 px-sm rounded-lg font-label-md text-label-md text-on-error bg-error hover:bg-on-error-container transition-colors shadow-sm flex items-center justify-center gap-xs sm:col-span-2">
+
+                                    <span class="material-symbols-outlined text-[18px]">local_police</span>
+                                    Dispatch Supervisor
+                                </button>
                                 </div>
                                 <div class="hidden absolute inset-0 bg-surface-container-lowest/90 backdrop-blur-md z-20 flex flex-col items-center justify-center" id="rest-confirmation">
                                     <span class="material-symbols-outlined text-primary text-[48px] mb-sm">check_circle</span>
@@ -215,5 +221,3 @@
         </div>
     </body>
 </html>
-
-
