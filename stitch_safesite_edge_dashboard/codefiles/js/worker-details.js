@@ -29,4 +29,23 @@ if (worker) {
 
     document.getElementById("ambient-temp").textContent =
     worker.readings.ambientTemp + "°";
+
+    const riskReasons = document.getElementById("risk-reasons");
+
+    worker.riskReasons.forEach(reason => {
+    const li = document.createElement("li");
+
+    li.className = "flex items-start gap-sm";
+
+    li.innerHTML = `
+        <span class="material-symbols-outlined text-error text-[18px] mt-0.5">
+            warning
+        </span>
+        <span class="font-body-md text-body-md text-on-surface">
+            ${reason}
+        </span>
+    `;
+
+    riskReasons.appendChild(li);
+});
 }
