@@ -15,39 +15,44 @@ if (worker) {
             : worker.status === "warning"
             ? "Need Attention"
             : "Safe";
+
     document.getElementById("worker-activity").textContent =
-    worker.activity;
+        worker.activity;
+
     document.getElementById("heart-rate").textContent =
-    worker.readings.heartRate;
+        worker.readings.heartRate;
+
     document.getElementById("skin-temp").textContent =
-    worker.readings.skinTemp + "°";
+        worker.readings.skinTemp + "°";
+
     document.getElementById("spo2").textContent =
-    worker.readings.spo2 + "%";
+        worker.readings.spo2 + "%";
 
     document.getElementById("humidity").textContent =
-    worker.readings.humidity + "%";
+        worker.readings.humidity + "%";
 
     document.getElementById("ambient-temp").textContent =
-    worker.readings.ambientTemp + "°";
+        worker.readings.ambientTemp + "°";
 
     const riskReasons = document.getElementById("risk-reasons");
 
     worker.riskReasons.forEach(reason => {
-    const li = document.createElement("li");
+        const li = document.createElement("li");
 
-    li.className = "flex items-start gap-sm";
+        li.className = "flex items-start gap-sm";
 
-    li.innerHTML = `
-        <span class="material-symbols-outlined text-error text-[18px] mt-0.5">
-            warning
-        </span>
-        <span class="font-body-md text-body-md text-on-surface">
-            ${reason}
-        </span>
-    `;
+        li.innerHTML = `
+            <span class="material-symbols-outlined text-error text-[18px] mt-0.5">
+                warning
+            </span>
+            <span class="font-body-md text-body-md text-on-surface">
+                ${reason}
+            </span>
+        `;
 
-    riskReasons.appendChild(li);
-});
+        riskReasons.appendChild(li);
+    });
+
     const trendPath = document.getElementById("risk-trend-path");
     const trendPoint = document.getElementById("risk-trend-point");
 
@@ -72,16 +77,4 @@ if (worker) {
 
     trendPoint.setAttribute("cx", lastPoint.x);
     trendPoint.setAttribute("cy", lastPoint.y);
-    const ackButton = document.getElementById("btn-ack-alert");
-
-ackButton.addEventListener("click", () => {
-    ackButton.innerHTML = `
-        <span class="material-symbols-outlined text-[18px]">
-            check_circle
-        </span>
-        Alert Acknowledged
-    `;
-
-    ackButton.classList.add("bg-primary", "text-on-primary");
-});
 }
