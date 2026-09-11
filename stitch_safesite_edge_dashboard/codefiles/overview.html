@@ -65,7 +65,7 @@
         <span class="font-headline-md text-headline-md text-on-surface-variant">/ <span id="stat-total-count">0</span></span>
         </div>
         <div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mt-auto">
-        <div class="h-full bg-primary w-[84%]"></div>
+        <div class="h-full bg-primary" id="active-progress-bar" style="width: 0%"></div>
         </div>
         </div>
         <div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-sm">
@@ -92,7 +92,7 @@
         <span class="font-display-lg text-display-lg text-on-error-container relative z-10" id="stat-critical-count">0</span>
         </div>
         </div>
-        <div class="flex flex-col gap-lg"><div class="bg-error-container/40 border-2 border-error p-md rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-md relative overflow-hidden"><div class="absolute -right-8 -top-8 w-40 h-40 bg-error/10 rounded-full blur-3xl pointer-events-none"></div><div class="flex items-start gap-md z-10"><div class="w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[28px] animate-pulse" style="font-variation-settings: 'FILL' 1;">emergency</span></div><div class="flex flex-col gap-xs"><div class="flex flex-wrap items-center gap-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider font-bold bg-error text-on-error px-2 py-0.5 rounded-full">Active Alert</span><span class="font-headline-md text-headline-md text-error font-bold tracking-tight">Heat Stroke Danger</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-error font-semibold">Detected Just Now</span></div><p class="font-body-md text-body-md text-on-surface">Worker <strong class="font-semibold text-on-surface">Raju (Watch #12)</strong> — Immediate heat strain detected. Heart rate 142 bpm, core temp spike.</p><div class="flex items-center gap-md mt-xs"><div class="flex items-center gap-xs font-label-md text-label-md"><span class="text-on-surface-variant">Risk Score:</span><span class="font-bold text-error bg-surface-container-lowest px-2 py-0.5 rounded border border-error/30">91 / 100</span></div><div class="flex items-center gap-xs font-label-sm text-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_on</span>Zone 4 (North Foundation Excavation)</div></div></div></div><div class="flex flex-wrap gap-sm z-10 w-full md:w-auto mt-2 md:mt-0"><button class="flex-1 md:flex-none h-12 px-md bg-error hover:bg-error/90 text-on-error rounded-xl font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-xs transition-colors"><span class="material-symbols-outlined text-[18px]">e911_emergency</span>Dispatch Supervisor</button><button class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Acknowledge</button><button class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-primary border border-primary/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Worker Profile</button></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-lg"><div class="lg:col-span-2 flex flex-col gap-md"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm"><div class="flex items-center gap-sm"><h2 class="font-headline-md text-headline-md text-on-surface">Alert Management &amp; History</h2><span class="flex h-6 w-6 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold">2</span></div><div class="flex items-center gap-xs bg-surface-container-high p-1 rounded-xl self-start sm:self-auto"><button class="px-3 py-1 text-label-sm font-label-sm bg-surface-container-lowest text-on-surface shadow-sm rounded-lg font-semibold">All</button><button class="px-3 py-1 text-label-sm font-label-sm text-error hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium">Critical (1)</button><button class="px-3 py-1 text-label-sm font-label-sm text-tertiary hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium">Warning (1)</button><button class="px-3 py-1 text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium">Resolved (8)</button></div></div><div class="flex flex-col gap-sm" id="alerts-container"><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 border-error hover:shadow-lg transition-shadow"><div class="flex flex-col gap-xs"><div class="flex items-center gap-xs"><span class="font-label-sm text-label-sm uppercase text-error tracking-widest font-bold">Critical</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">2 min ago</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-outline">Zone 4 Excavation</span></div><div class="font-body-lg text-body-lg text-on-surface font-semibold">Raju — Watch #12</div><div class="font-body-md text-body-md text-on-surface-variant">Heat Stroke Danger: High core exertion spike detected. Needs cooling relief immediately.</div></div><div class="flex gap-sm w-full md:w-auto mt-2 md:mt-0 shrink-0"><button class="flex-1 md:flex-none h-10 px-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors">View Worker</button><button class="flex-1 md:flex-none h-10 px-md bg-primary hover:bg-primary/90 text-on-primary rounded font-label-md text-label-md shadow-sm transition-colors">Acknowledge</button></div></div><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 border-tertiary hover:shadow-lg transition-shadow"><div class="flex flex-col gap-xs"><div class="flex items-center gap-xs"><span class="font-label-sm text-label-sm uppercase text-tertiary tracking-widest font-bold">Warning</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">5 min ago</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-outline">Zone 2 Steel Erection</span></div><div class="font-body-lg text-body-lg text-on-surface font-semibold">Suresh — Watch #27</div><div class="font-body-md text-body-md text-on-surface-variant">Rising Heat Strain: Skin temperature 37.8°C sustained for 15+ minutes. Hydration break advised.</div></div><div class="flex gap-sm w-full md:w-auto mt-2 md:mt-0 shrink-0"><button class="flex-1 md:flex-none h-10 px-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors">View Worker</button><button class="flex-1 md:flex-none h-10 px-md bg-primary hover:bg-primary/90 text-on-primary rounded font-label-md text-label-md shadow-sm transition-colors">Acknowledge</button></div></div><div class="bg-surface-container-lowest/80 p-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 border-outline-variant hover:shadow-md transition-shadow"><div class="flex flex-col gap-xs"><div class="flex items-center gap-xs"><span class="font-label-sm text-label-sm uppercase text-outline tracking-widest font-bold">Resolved</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">42 min ago</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-outline">Zone 1 Assembly</span></div><div class="font-body-lg text-body-lg text-on-surface font-medium">Anil — Watch #08</div><div class="font-body-md text-body-md text-on-surface-variant">Hydration advisory acknowledged; vitals returned to Safe baseline.</div></div><div class="flex gap-sm w-full md:w-auto mt-2 md:mt-0 shrink-0"><span class="font-label-sm text-label-sm text-outline px-3 py-1.5 bg-surface-container rounded-lg flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">check</span>Resolved</span></div></div></div></div><div class="flex flex-col gap-md"><h2 class="font-headline-md text-headline-md text-on-surface">Environmental &amp; Site Status</h2><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md border border-outline-variant/30"><div class="flex items-center justify-between"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-tertiary">thermostat</span><span class="font-label-md text-label-md font-semibold text-on-surface">Site Microclimate</span></div><span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold uppercase">Extreme Risk</span></div><div class="grid grid-cols-3 gap-sm py-xs border-y border-outline-variant/20"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Air Temp</span><span class="font-headline-md text-headline-md text-on-surface font-bold">38°C</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Humidity</span><span class="font-headline-md text-headline-md text-on-surface font-bold">65%</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">WBGT Index</span><span class="font-headline-md text-headline-md text-error font-bold">32.5°C</span></div></div><div class="flex flex-col gap-xs"><div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"><span>WBGT 6-Hour Heat Trend</span><span class="text-error font-semibold">+2.4°C / hr</span></div><div class="h-12 w-full flex items-end gap-1 pt-2"><div class="flex-1 bg-primary/20 rounded-t h-[40%]"></div><div class="flex-1 bg-primary/30 rounded-t h-[48%]"></div><div class="flex-1 bg-primary/40 rounded-t h-[55%]"></div><div class="flex-1 bg-tertiary/50 rounded-t h-[70%]"></div><div class="flex-1 bg-tertiary rounded-t h-[82%]"></div><div class="flex-1 bg-error rounded-t h-[96%]"></div></div></div></div><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md relative overflow-hidden"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-on-surface-variant font-semibold">Watch Network</span><span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">Network Healthy</span></div><div class="flex items-baseline gap-xs"><span class="font-headline-lg text-headline-lg text-on-surface font-bold">48</span><span class="font-body-md text-body-md text-on-surface-variant">/ 50 connected</span></div><div class="flex flex-col gap-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[18px]">wifi</span></div><span class="font-body-md text-body-md text-on-surface">Connected</span></div><span class="font-label-md text-label-md text-on-surface font-bold">48</span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline text-[18px]">wifi_off</span></div><span class="font-body-md text-body-md text-on-surface">Offline</span></div><span class="font-label-md text-label-md text-on-surface font-bold">2</span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-tertiary text-[18px]">battery_alert</span></div><span class="font-body-md text-body-md text-on-surface">Low Battery</span></div><span class="font-label-md text-label-md text-on-surface font-bold">3</span></div></div></div><div class="w-full h-44 bg-cover bg-center rounded-xl shadow-md relative overflow-hidden" data-alt="A stylized, architectural top-down site map of a construction zone in cool blue tones, highlighting activity zones and sensor node placements. Blueprint style aesthetics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPnfXHM7MepY_xsNAq96WoqyCWh-jWTGgAmpO1Gj15uzF-gfUImNJPpLFHsXkdn2ZfRiv5X0Pb27un4QNXXKae-FRFrL4KegPpDu2QQ4V07gSnXC-MOwd91f6sKS5sPzhVMu1hxZkSZocNP-7kYHN8CzheISsh4EmBSHiT2pQBZFt7udf9Zer2DInGIV2Zu7V5ZDmCWoUqJGs-CFaZzVNotuAsKLbYlmORQlzE3zhiMNYXyWhfMfs')"><div class="absolute inset-0 bg-gradient-to-t from-surface-container/90 to-transparent flex items-end p-sm"><span class="font-label-sm text-label-sm text-on-surface bg-surface/80 backdrop-blur-md px-2 py-1 rounded font-semibold">Live Node Map</span></div></div></div></div></div>
+        <div class="flex flex-col gap-lg"><div class="hidden bg-error-container/40 border-2 border-error p-md rounded-xl shadow-md flex-col md:flex-row justify-between items-start md:items-center gap-md relative overflow-hidden" id="active-alert-banner"><div class="absolute -right-8 -top-8 w-40 h-40 bg-error/10 rounded-full blur-3xl pointer-events-none"></div><div class="flex items-start gap-md z-10"><div class="w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[28px] animate-pulse" style="font-variation-settings: 'FILL' 1;">emergency</span></div><div class="flex flex-col gap-xs"><div class="flex flex-wrap items-center gap-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider font-bold bg-error text-on-error px-2 py-0.5 rounded-full">Active Alert</span><span class="font-headline-md text-headline-md text-error font-bold tracking-tight" id="active-alert-title">—</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-error font-semibold" id="active-alert-time">—</span></div><p class="font-body-md text-body-md text-on-surface" id="active-alert-desc">Loading alert details…</p><div class="flex items-center gap-md mt-xs"><div class="flex items-center gap-xs font-label-md text-label-md"><span class="text-on-surface-variant">Risk Score:</span><span class="font-bold text-error bg-surface-container-lowest px-2 py-0.5 rounded border border-error/30" id="active-alert-risk">— / 100</span></div><div class="flex items-center gap-xs font-label-sm text-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_on</span><span id="active-alert-zone">—</span></div></div></div></div><div class="flex flex-wrap gap-sm z-10 w-full md:w-auto mt-2 md:mt-0"><button class="flex-1 md:flex-none h-12 px-md bg-error hover:bg-error/90 text-on-error rounded-xl font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-xs transition-colors"><span class="material-symbols-outlined text-[18px]">e911_emergency</span>Dispatch Supervisor</button><button class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Acknowledge</button><button class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-primary border border-primary/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Worker Profile</button></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-lg"><div class="lg:col-span-2 flex flex-col gap-md"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm"><div class="flex items-center gap-sm"><h2 class="font-headline-md text-headline-md text-on-surface">Alert Management &amp; History</h2><span class="flex h-6 w-6 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold" id="active-alerts-badge">2</span></div><div class="flex items-center gap-xs bg-surface-container-high p-1 rounded-xl self-start sm:self-auto" id="alert-tabs"><button class="px-3 py-1 text-label-sm font-label-sm text-error hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-critical" data-filter="critical" onclick="setAlertFilter('critical')">Critical (<span id="tab-critical-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-tertiary hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-warning" data-filter="warning" onclick="setAlertFilter('warning')">Warning (<span id="tab-warning-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-resolved" data-filter="resolved" onclick="setAlertFilter('resolved')">Resolved (<span id="tab-resolved-count">8</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm bg-surface-container-lowest text-on-surface shadow-sm rounded-lg font-semibold" id="alert-tab-all" data-filter="all" onclick="setAlertFilter('all')">All</button></div></div><div class="flex flex-col gap-sm" id="alerts-container"><!-- Rows injected via JS from data.js `alerts` + `workers` --></div></div><div class="flex flex-col gap-md"><h2 class="font-headline-md text-headline-md text-on-surface">Environmental &amp; Site Status</h2><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md border border-outline-variant/30"><div class="flex items-center justify-between"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-tertiary">thermostat</span><span class="font-label-md text-label-md font-semibold text-on-surface">Site Microclimate</span></div><span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold uppercase" id="env-risk-badge">Extreme Risk</span></div><div class="grid grid-cols-3 gap-sm py-xs border-y border-outline-variant/20"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Air Temp</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-air-temp">0°C</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Humidity</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-humidity">0%</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">WBGT Index</span><span class="font-headline-md text-headline-md text-error font-bold" id="env-wbgt">0°C</span></div></div><div class="flex flex-col gap-xs"><div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"><span>WBGT 6-Hour Heat Trend</span><span class="text-error font-semibold" id="env-trend-rate">+0°C / hr</span></div><div class="h-12 w-full flex items-end gap-1 pt-2" id="env-trend-bars"><!-- Bars injected via JS from data.js `siteConditions.wbgtHistory` --></div></div></div><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md relative overflow-hidden"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-on-surface-variant font-semibold">Watch Network</span><span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">Network Healthy</span></div><div class="flex items-baseline gap-xs"><span class="font-headline-lg text-headline-lg text-on-surface font-bold" id="network-connected-count"></span><span class="font-body-md text-body-md text-on-surface-variant">/ <span id="network-total-count">0</span> connected</span></div><div class="flex flex-col gap-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[18px]">wifi</span></div><span class="font-body-md text-body-md text-on-surface">Connected</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-connected-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline text-[18px]">wifi_off</span></div><span class="font-body-md text-body-md text-on-surface">Offline</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-offline-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-tertiary text-[18px]">battery_alert</span></div><span class="font-body-md text-body-md text-on-surface">Low Battery</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-lowbattery-row-count"></span></div></div></div></div></div></div>
         <div class="flex flex-col gap-md mt-md">
         <h2 class="font-headline-md text-headline-md text-on-surface">Workers</h2>
         <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden overflow-x-auto">
@@ -203,16 +203,80 @@
                     setSidebarCollapsed(!isCollapsed);
                 });
 
-                // Mock Data Service
-                // `workers` comes from data.js (loaded above) — kept as the single
-                // source of truth instead of being redefined here.
+                // Data Service
+                // `workers`, `watches`, and `alerts` all come from data.js
+                // (loaded above) — kept as the single sources of truth
+                // instead of being redefined here. `alerts` only stores a
+                // `workerId`; the worker's name/watchId/risk are always
+                // looked up live from `workers` so nothing can drift out of
+                // sync. STATUS_LABELS below is a display-only label map —
+                // data.js's worker.status is the machine value ('critical'/
+                // 'warning'/'safe'); there is no separate stored label.
                 const mockData = {
-                    alerts: [
-                        { id: 1, type: 'critical', workerId: '12', workerName: 'Raju', watch: '#12', issue: 'Heat Stroke Danger', time: '2 min ago' },
-                        { id: 2, type: 'warning', workerId: '27', workerName: 'Suresh', watch: '#27', issue: 'Rising Heat Strain', time: '5 min ago' }
-                    ],
+                    alerts: alerts,
                     workers: workers
                 };
+
+                const STATUS_LABELS = {
+                    critical: 'Critical',
+                    warning: 'Need Attention',
+                    safe: 'Safe'
+                };
+
+                function getWorker(id) {
+                    return mockData.workers.find(w => w.id === id);
+                }
+
+                // Alert filter tabs: 'critical' | 'warning' | 'resolved' | 'all'.
+                // 'all' means "all active alerts" (critical + warning) --
+                // resolved alerts are only shown when the Resolved tab is
+                // selected, and acknowledged alerts never show here.
+                let currentAlertFilter = 'all';
+
+                function getFilteredAlerts() {
+                    switch (currentAlertFilter) {
+                        case 'critical':
+                            return mockData.alerts.filter(a => a.status === 'active' && a.type === 'critical');
+                        case 'warning':
+                            return mockData.alerts.filter(a => a.status === 'active' && a.type === 'warning');
+                        case 'resolved':
+                            // Resolved tab groups both resolved and acknowledged
+                            // alerts together -- both are "closed" from an
+                            // active-response standpoint.
+                            return mockData.alerts.filter(a => a.status === 'resolved' || a.status === 'acknowledged');
+                        case 'all':
+                        default:
+                            return mockData.alerts.filter(a => a.status === 'active');
+                    }
+                }
+
+                function setAlertFilter(filter) {
+                    currentAlertFilter = filter;
+                    updateAlertTabStyles();
+                    renderAlerts();
+                }
+
+                function updateAlertTabStyles() {
+                    document.querySelectorAll('#alert-tabs button[data-filter]').forEach(btn => {
+                        const isActive = btn.dataset.filter === currentAlertFilter;
+                        btn.classList.toggle('bg-surface-container-lowest', isActive);
+                        btn.classList.toggle('shadow-sm', isActive);
+                        btn.classList.toggle('font-semibold', isActive);
+                        btn.classList.toggle('font-medium', !isActive);
+                    });
+                }
+
+                // Acknowledge an alert: flips its status and re-renders --
+                // acknowledged alerts drop out of every filter above, so
+                // they immediately disappear from the Active Alerts list.
+                function acknowledgeAlert(alertId) {
+                    const alert = mockData.alerts.find(a => a.id === alertId);
+                    if (!alert) return;
+                    alert.status = 'acknowledged';
+                    renderAlerts();
+                    renderAlertCounts();
+                    renderActiveAlertBanner();
+                }
 
                 // Time update
                 function updateTime() {
@@ -222,28 +286,100 @@
                 setInterval(updateTime, 1000);
                 updateTime();
 
-                // Render Alerts
+                // Render Active Alert Banner (highest-risk worker with an active alert)
+                function renderActiveAlertBanner() {
+                    const banner = document.getElementById('active-alert-banner');
+                    const active = mockData.alerts.filter(a => a.status === 'active');
+                    if (active.length === 0) {
+                        banner.classList.add('hidden');
+                        banner.classList.remove('flex');
+                        return;
+                    }
+                    const top = active.map(a => ({ alert: a, worker: getWorker(a.workerId) }))
+                                       .filter(x => x.worker)
+                                       .sort((a, b) => b.worker.risk - a.worker.risk)[0];
+                    if (!top || top.worker.risk<50) {
+                        banner.classList.add('hidden');
+                        banner.classList.remove('flex');
+                        return;
+                    }
+                    banner.classList.remove('hidden');
+                    banner.classList.add('flex');
+                    const { alert, worker } = top;
+                    document.getElementById('active-alert-title').textContent = alert.issue;
+                    document.getElementById('active-alert-time').textContent = alert.time;
+                    document.getElementById('active-alert-risk').textContent = `${worker.risk} / 100`;
+                    document.getElementById('active-alert-zone').textContent = alert.zone;
+                    // Description is built from worker.readings (data.js) rather
+                    // than a hand-typed sentence, so it can never go stale.
+                    const r = worker.readings;
+                    const readingText = r
+                        ? `Heart rate ${r.heartRate} bpm, skin temp ${r.skinTemp}°C.`
+                        : '';
+                    document.getElementById('active-alert-desc').innerHTML =
+                        `Worker <strong class="font-semibold text-on-surface">${worker.name} (Watch #${worker.watchId})</strong> — ${readingText}`;
+                }
+
+                // Render Alerts (all types: critical / warning / resolved)
                 function renderAlerts() {
                     const container = document.getElementById('alerts-container');
-                    container.innerHTML = mockData.alerts.map(alert => `
-                        <div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 ${alert.type === 'critical' ? 'border-error' : 'border-tertiary'} hover:shadow-lg transition-shadow">
+                    const styleByType = {
+                        critical: { border: 'border-error', label: 'text-error' },
+                        warning: { border: 'border-tertiary', label: 'text-tertiary' },
+                        resolved: { border: 'border-outline-variant', label: 'text-outline' }
+                    };
+                    const filteredAlerts = getFilteredAlerts();
+                    if (filteredAlerts.length === 0) {
+                        container.innerHTML = `<div class="text-center py-lg font-body-md text-body-md text-on-surface-variant">No alerts in this view.</div>`;
+                        return;
+                    }
+                    container.innerHTML = filteredAlerts.map(alert => {
+                        const worker = getWorker(alert.workerId);
+                        if (!worker) return '';
+                        const s = styleByType[alert.type] || styleByType.warning;
+                        // "Resolved" (closed) covers both status values --
+                        // acknowledged alerts render alongside resolved ones,
+                        // just with their own badge text.
+                        const isResolved = alert.status === 'resolved' || alert.status === 'acknowledged';
+                        const closedLabel = alert.status === 'acknowledged' ? 'Acknowledged' : 'Resolved';
+                        const actions = isResolved
+                            ? `<span class="font-label-sm text-label-sm text-outline px-3 py-1.5 bg-surface-container rounded-lg flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">check</span>${closedLabel}</span>`
+                            : `<button class="flex-1 md:flex-none h-12 px-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" onclick="window.location.href='#/worker-details/${worker.id}'">View Worker</button>
+                               <button class="flex-1 md:flex-none h-12 px-md bg-primary hover:bg-primary/90 text-on-primary rounded font-label-md text-label-md shadow-sm transition-colors" onclick="acknowledgeAlert('${alert.id}')">Acknowledge</button>`;
+                        return `
+                        <div class="bg-surface-container-lowest${isResolved ? '/80' : ''} p-md rounded-xl shadow-${isResolved ? 'sm' : 'md'} flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 ${s.border} hover:shadow-lg transition-shadow">
                             <div class="flex flex-col gap-xs">
                                 <div class="flex items-center gap-xs">
-                                    <span class="font-label-sm text-label-sm uppercase ${alert.type === 'critical' ? 'text-error' : 'text-tertiary'} tracking-widest font-bold">${alert.type}</span>
+                                    <span class="font-label-sm text-label-sm uppercase ${s.label} tracking-widest font-bold">${alert.type}</span>
                                     <span class="text-on-surface-variant text-[12px]">•</span>
                                     <span class="font-label-sm text-label-sm text-on-surface-variant">${alert.time}</span>
+                                    <span class="text-on-surface-variant text-[12px]">•</span>
+                                    <span class="font-label-sm text-label-sm text-outline">${alert.zone}</span>
                                 </div>
-                                <div class="font-body-lg text-body-lg text-on-surface font-medium">
-                                    <span class="cursor-pointer hover:text-primary transition-colors" onclick="window.location.href='#/worker-details/${alert.workerId}'">${alert.workerName}</span> — Watch ${alert.watch}
+                                <div class="font-body-lg text-body-lg text-on-surface font-${isResolved ? 'medium' : 'semibold'}">
+                                    <span class="cursor-pointer hover:text-primary transition-colors" onclick="window.location.href='#/worker-details/${worker.id}'">${worker.name}</span> — Watch #${worker.watchId}
                                 </div>
                                 <div class="font-body-md text-body-md text-on-surface-variant">${alert.issue}</div>
                             </div>
-                            <div class="flex gap-sm w-full md:w-auto mt-2 md:mt-0">
-                                <button class="flex-1 md:flex-none h-12 px-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" onclick="window.location.href='#/worker-details/${alert.workerId}'">View Worker</button>
-                                <button class="flex-1 md:flex-none h-12 px-md bg-primary hover:bg-primary/90 text-on-primary rounded font-label-md text-label-md shadow-sm transition-colors" onclick="this.closest('div.bg-surface-container-lowest').remove();">Acknowledge</button>
+                            <div class="flex gap-sm w-full md:w-auto mt-2 md:mt-0 shrink-0">
+                                ${actions}
                             </div>
                         </div>
-                    `).join('');
+                    `;
+                    }).join('');
+                }
+
+                // Render Alert Management badge + filter tab counts
+                function renderAlertCounts() {
+                    const critical = mockData.alerts.filter(a => a.status === 'active' && a.type === 'critical').length;
+                    const warning = mockData.alerts.filter(a => a.status === 'active' && a.type === 'warning').length;
+                    const resolved = mockData.alerts.filter(a => a.status === 'resolved' || a.status === 'acknowledged').length;
+                    const activeTotal = mockData.alerts.filter(a => a.status === 'active').length;
+
+                    document.getElementById('active-alerts-badge').textContent = activeTotal;
+                    document.getElementById('tab-critical-count').textContent = critical;
+                    document.getElementById('tab-warning-count').textContent = warning;
+                    document.getElementById('tab-resolved-count').textContent = resolved;
                 }
 
                 // Render Workers
@@ -266,11 +402,11 @@
                                     <span class="font-label-md text-label-md group-hover:text-primary transition-colors">${w.name}</span>
                                 </div>
                             </td>
-                            <td class="p-4 font-body-md text-on-surface-variant">${w.watch}</td>
+                            <td class="p-4 font-body-md text-on-surface-variant">#${w.watchId}</td>
                             <td class="p-4">
                                 <div class="inline-flex items-center gap-xs px-2 py-1 rounded-full ${statusConfig[w.status].bg}">
                                     <span class="material-symbols-outlined text-[14px] ${statusConfig[w.status].color}" style="font-variation-settings: 'FILL' 1;">${statusConfig[w.status].icon}</span>
-                                    <span class="font-label-sm text-label-sm ${statusConfig[w.status].color}">${w.statusText}</span>
+                                    <span class="font-label-sm text-label-sm ${statusConfig[w.status].color}">${STATUS_LABELS[w.status]}</span>
                                 </div>
                             </td>
                             <td class="p-4">
@@ -289,7 +425,8 @@
                     `).join('');
                 }
 
-                // Render Stats
+                // Render Stats (unchanged logic — worker.active/worker.status
+                // already exist in data.js, this function was already correct)
                 function renderStats() {
                     const total = mockData.workers.length;
                     const active = mockData.workers.filter(w => w.active).length;
@@ -302,12 +439,71 @@
                     document.getElementById('stat-safe-count').textContent = safe;
                     document.getElementById('stat-warning-count').textContent = warning;
                     document.getElementById('stat-critical-count').textContent = critical;
+
+                    const pct = total > 0 ? Math.round((active / total) * 100) : 0;
+                    document.getElementById('active-progress-bar').style.width = `${pct}%`;
+                }
+
+                // Render Site Microclimate card (from data.js `siteConditions`)
+                function renderEnvironmental() {
+                    document.getElementById('env-air-temp').textContent = `${siteConditions.airTemp}°C`;
+                    document.getElementById('env-humidity').textContent = `${siteConditions.humidity}%`;
+                    document.getElementById('env-wbgt').textContent = `${siteConditions.wbgt}°C`;
+
+                    const riskConfig = {
+                        low:      { label: 'Low Risk',      bg: 'bg-primary-container/20',  text: 'text-primary' },
+                        moderate: { label: 'Moderate Risk',  bg: 'bg-tertiary-container/20', text: 'text-tertiary' },
+                        high:     { label: 'High Risk',      bg: 'bg-tertiary-container',    text: 'text-on-tertiary-container' },
+                        extreme:  { label: 'Extreme Risk',   bg: 'bg-error-container',       text: 'text-on-error-container' }
+                    };
+                    const risk = riskConfig[siteConditions.riskLevel] || riskConfig.moderate;
+                    const badge = document.getElementById('env-risk-badge');
+                    badge.textContent = risk.label;
+                    badge.className = `font-label-sm text-label-sm ${risk.bg} ${risk.text} px-2 py-0.5 rounded-full font-bold uppercase`;
+
+                    const rate = siteConditions.trendRatePerHour;
+                    const rateEl = document.getElementById('env-trend-rate');
+                    rateEl.textContent = `${rate >= 0 ? '+' : ''}${rate}°C / hr`;
+                    rateEl.className = rate >= 0 ? 'text-error font-semibold' : 'text-primary font-semibold';
+
+                    // Bar heights are derived from wbgtHistory, not stored as
+                    // separate data — so the chart can never disagree with the
+                    // numbers it's supposed to represent.
+                    const history = siteConditions.wbgtHistory;
+                    const max = Math.max(...history);
+                    const min = Math.min(...history);
+                    const range = max - min || 1;
+                    const barColors = ['bg-primary/20', 'bg-primary/30', 'bg-primary/40', 'bg-tertiary/50', 'bg-tertiary', 'bg-error'];
+                    document.getElementById('env-trend-bars').innerHTML = history.map((v, i) => {
+                        const pct = Math.round(20 + ((v - min) / range) * 80); // floor at 20% so bars stay visible
+                        const color = barColors[i] || 'bg-error';
+                        return `<div class="flex-1 ${color} rounded-t" style="height: ${pct}%"></div>`;
+                    }).join('');
+                }
+
+                // Render Watch Network summary widget (from `watches`)
+                function renderNetworkWidget() {
+                    const total = watches.length;
+                    const connected = watches.filter(w => w.connectionStatus === 'connected').length;
+                    const offline = watches.filter(w => w.connectionStatus === 'offline').length;
+                    const lowBattery = watches.filter(w => w.battery < 15).length;
+
+                    document.getElementById('network-connected-count').textContent = connected;
+                    document.getElementById('network-total-count').textContent = total;
+                    document.getElementById('network-connected-row-count').textContent = connected;
+                    document.getElementById('network-offline-row-count').textContent = offline;
+                    document.getElementById('network-lowbattery-row-count').textContent = lowBattery;
                 }
 
                 // Init
                 renderStats();
+                renderActiveAlertBanner();
+                renderAlertCounts();
+                updateAlertTabStyles();
                 renderAlerts();
                 renderWorkers();
+                renderNetworkWidget();
+                renderEnvironmental();
             </script>
             </main>
             </div>
