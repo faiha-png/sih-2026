@@ -7,6 +7,7 @@
 //   workers -> information about PEOPLE    (identity, vitals, risk)
 //   watches -> information about DEVICES   (pairing, battery, connectivity)
 //   alerts  -> information about INCIDENTS (what happened, to whom, when)
+//   siteConditions   ->  info abou site temp, humidity, wbgt etc.
 //
 // Every HTML page (overview, watches, worker_details, network) reads from
 // these three arrays instead of hardcoding any names, numbers, or status
@@ -27,7 +28,7 @@
 const workers = [
     {
         id: "12",
-        name: "Raju",
+        name: "Fathima",
         watchId: "12",
         status: "critical",
         risk: 91,
@@ -679,3 +680,22 @@ const alerts = [
     { id: "A007", workerId: "02", type: "warning", issue: "Rising Heat Strain", status: "active", time: "13 sec ago", zone: "Zone 2 (Steel Erection)" },
     { id: "A008", workerId: "08", type: "resolved", issue: "Hydration Advisory", status: "resolved", time: "42 min ago", zone: "Zone 1 (Assembly)" }
 ];
+
+
+// ---------------------------------------------------------------------------
+// SITE CONDITIONS -- one snapshot of site-wide environmental readings.
+//   riskLevel        = "low" | "moderate" | "high" | "extreme" — drives the
+//                       badge color/label on the Site Microclimate card
+//   trendRatePerHour  = signed °C/hr change in WBGT, shown next to the trend
+//   wbgtHistory       = last 6 hourly WBGT samples (oldest -> newest), used
+//                       to draw the trend bars — no separate bar-height data
+//                       is stored, the UI derives bar heights from this
+// ---------------------------------------------------------------------------
+const siteConditions = {
+    airTemp: 38,
+    humidity: 65,
+    wbgt: 32.5,
+    riskLevel: "extreme",
+    trendRatePerHour: 2.4,
+    wbgtHistory: [26.8, 28.4, 29.6, 31.0, 32.0, 32.5]
+};

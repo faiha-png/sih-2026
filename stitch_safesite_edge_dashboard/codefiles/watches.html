@@ -12,7 +12,7 @@
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50">
             <div class="p-md flex items-center gap-base">
                 <span class="material-symbols-outlined text-primary">safety_check</span>
-                <span class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase">Site Safety</span>
+                <span class="font-headline-md text-headline-md tracking-tight uppercase italic"><span class="text-on-surface">Thermi</span><span class="text-error">Q</span></span>
             </div>
             <nav class="flex-1 px-sm mt-md flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
                 <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="overview.html">
@@ -34,13 +34,9 @@
                         <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-label-md text-label-md text-on-surface">Site Supervisor</span>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant">Construction Site A</span>
+                        <span class="font-label-md text-label-md text-on-surface">Manoj Sharma</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">Central Metro, Site 3</span>
                     </div>
-                </div>
-                <div class="flex items-center gap-xs text-[12px] font-label-sm text-on-surface-variant">
-                    <div class="w-2 h-2 rounded-full bg-primary"></div>
-                    System Online
                 </div>
             </div>
         </aside>
@@ -48,13 +44,9 @@
             <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
                 <div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">
                     <span class="material-symbols-outlined text-[18px]">location_on</span>
-                    Construction Site A
+                    Central Metro, Site 3
                 </div>
                 <div class="flex items-center gap-md">
-                    <div class="flex items-center gap-xs px-sm py-xs bg-primary/10 rounded-full border border-primary/20">
-                        <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span class="text-[11px] font-label-sm text-primary uppercase font-bold tracking-tighter">Live Feed</span>
-                    </div>
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                         <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
                     </div>
@@ -82,10 +74,10 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-on-surface tracking-tight">48</span>
+                                <span id="summary-connected-count" class="font-headline-lg text-[36px] font-bold text-on-surface tracking-tight">48</span>
                                 <span class="font-label-md text-label-md text-primary font-medium">↑ 96%</span>
                             </div>
-                            <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">48 / 50 online devices</span>
+                            <span id="summary-connected-subtitle" class="font-body-md text-label-sm text-on-surface-variant mt-xs">48 / 50 online devices</span>
                         </div>
                         <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
                             <div class="flex items-center justify-between">
@@ -96,7 +88,7 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-error tracking-tight">2</span>
+                                <span id="summary-offline-count" class="font-headline-lg text-[36px] font-bold text-error tracking-tight">2</span>
                                 <span class="font-label-md text-label-md text-error font-medium">Devices</span>
                             </div>
                             <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Requires reconnection</span>
@@ -110,7 +102,7 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-tertiary tracking-tight">3</span>
+                                <span id="summary-lowbattery-count" class="font-headline-lg text-[36px] font-bold text-tertiary tracking-tight">3</span>
                                 <span class="font-label-md text-label-md text-tertiary font-medium">&lt; 15%</span>
                             </div>
                             <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Needs docking &amp; charge</span>
@@ -260,8 +252,7 @@
                                     </select>
                                     <label class="font-label-md text-label-md text-on-surface mt-sm">Select Worker</label>
                                     <select class="h-12 w-full px-md rounded-lg border border-outline bg-surface-container-lowest font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none" id="workerSelect">
-                                        <option value="Babu">Babu</option>
-                                        <option value="Ramesh">Ramesh</option>
+                                        <option value="">Select a worker</option>
                                     </select>
                                 </div>
                             </div>
@@ -276,18 +267,62 @@
     document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('assignModal');
         const modalContent = document.getElementById('assignModalContent');
-        const openBtns = document.querySelectorAll('.assignBtn');
         const mainOpenBtn = document.getElementById('assignWatchBtnMain');
         const closeBtn = document.getElementById('closeModalBtn');
         const cancelBtn = document.getElementById('cancelBtn');
         const confirmBtn = document.getElementById('confirmAssignBtn');
         const watchSelect = document.getElementById('watchSelect');
         const workerSelect = document.getElementById('workerSelect');
-        
+
+        // Summary card counts — computed from `watches` (data.js), mirroring
+        // the same filter logic as overview.html's renderNetworkWidget()
+        const summaryTotal = watches.length;
+        const summaryConnected = watches.filter(w => w.connectionStatus === 'connected').length;
+        const summaryOffline = watches.filter(w => w.connectionStatus === 'offline').length;
+        const summaryLowBattery = watches.filter(w => w.battery < 15).length;
+
+        document.getElementById('summary-connected-count').textContent = summaryConnected;
+        document.getElementById('summary-connected-subtitle').textContent =
+            `${summaryConnected} / ${summaryTotal} online devices`;
+        document.getElementById('summary-offline-count').textContent = summaryOffline;
+        document.getElementById('summary-lowbattery-count').textContent = summaryLowBattery;
+
+        // Fill worker dropdown from data.js
+        workerSelect.innerHTML = '<option value="">Select a worker</option>';
+
+        workers.forEach(worker => {
+            const option = document.createElement('option');
+
+            option.value = worker.id;
+            option.textContent = `${worker.name} (#${worker.id})`;
+
+            workerSelect.appendChild(option);
+        });
+
+        // Fill available watches from data.js
+        function updateWatchOptions() {
+            watchSelect.innerHTML = '';
+
+            watches
+                .filter(watch => watch.assignmentStatus === 'available')
+                .forEach(watch => {
+                    const option = document.createElement('option');
+
+                    option.value = watch.id;
+                    option.textContent =
+                        `#${watch.id} (Available, ${watch.battery}%)`;
+
+                    watchSelect.appendChild(option);
+                });
+        }
+
         function openModal(watchId = null) {
+            updateWatchOptions();
+
             if (watchId) {
                 watchSelect.value = watchId;
             }
+
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modalContent.classList.remove('scale-95');
             modalContent.classList.add('scale-100');
@@ -299,59 +334,102 @@
             modalContent.classList.add('scale-95');
         }
 
-        openBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                openModal(e.target.dataset.watch);
-            });
+        // Handle dynamically created Assign buttons
+        document.addEventListener('click', (e) => {
+            const assignBtn = e.target.closest('.assignBtn');
+
+            if (assignBtn) {
+                const watchId = assignBtn.dataset.watch.replace('#', '');
+                openModal(watchId);
+            }
         });
 
         mainOpenBtn.addEventListener('click', () => openModal());
+
         closeBtn.addEventListener('click', closeModal);
         cancelBtn.addEventListener('click', closeModal);
-        
+
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
+            if (e.target === modal) {
+                closeModal();
+            }
         });
 
+        // Confirm assignment
         confirmBtn.addEventListener('click', () => {
             const watchId = watchSelect.value;
-            const workerName = workerSelect.value;
-            
-            // Mock updating the table
-            const rows = document.querySelectorAll('#watchTableBody tr');
-            rows.forEach(row => {
-                const idCell = row.querySelector('td:first-child');
-                if (idCell && idCell.textContent === watchId) {
-                    row.innerHTML = `
-                        <td class="py-sm px-md font-body-md text-body-md text-on-surface font-semibold">${watchId}</td>
-                        <td class="py-sm px-md font-body-md text-body-md text-on-surface">${workerName}</td>
-                        <td class="py-sm px-md">
-                            <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
-                                <span class="material-symbols-outlined text-[14px]">check_circle</span>
-                                Assigned
-                            </span>
-                        </td>
-                        <td class="py-sm px-md">
-                            <div class="flex items-center gap-sm">
-                                <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
-                                    <div class="h-full bg-primary" style="width: 100%"></div>
-                                </div>
-                                <span class="font-body-md text-body-md text-on-surface-variant">100%</span>
-                            </div>
-                        </td>
-                        <td class="py-sm px-md font-body-md text-body-md text-on-surface-variant">Just now</td>
-                        <td class="py-sm px-md text-right">
-                            <button class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors">View</button>
-                        </td>
-                    `;
-                }
-            });
-            
+            const workerId = workerSelect.value;
+
+            if (!watchId || !workerId) {
+                alert('Please select a watch and a worker.');
+                return;
+            }
+
+            const watch = watches.find(
+                watch => watch.id === watchId
+            );
+
+            const worker = workers.find(
+                worker => worker.id === workerId
+            );
+
+            if (!watch || !worker) {
+                return;
+            }
+
+            // Update the watch data
+            watch.workerId = worker.id;
+            watch.assignmentStatus = 'assigned';
+            watch.lastUpdate = 'Just now';
+
+            // Find the table row
+            const assignBtn = document.querySelector(
+                `.assignBtn[data-watch="#${watchId}"]`
+            );
+
+            if (assignBtn) {
+                const row = assignBtn.closest('tr');
+
+                row.children[1].textContent = worker.name;
+
+                row.children[2].innerHTML = `
+                    <span class="inline-flex items-center gap-xs px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                        <span class="material-symbols-outlined text-[14px]">
+                            check_circle
+                        </span>
+                        Assigned
+                    </span>
+                `;
+
+                row.children[3].innerHTML = `
+                    <div class="flex items-center gap-sm">
+                        <div class="w-16 h-2 bg-surface-variant rounded-full overflow-hidden">
+                            <div class="h-full bg-primary" style="width: 100%"></div>
+                        </div>
+                        <span class="font-body-md text-body-md text-on-surface-variant">
+                            100%
+                        </span>
+                    </div>
+                `;
+
+                row.children[4].textContent = 'Just now';
+
+                row.children[5].innerHTML = `
+                    <button
+                        class="h-10 px-sm border border-outline-variant text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-colors"
+                        onclick="window.location.href='worker_details.html?id=${worker.id}'">
+                        View
+                    </button>
+                `;
+            }
+
             closeModal();
         });
     });
 </script>
             </main>
         </div>
+    <script src="data.js"></script>
+    <script src="watches.js"></script>
     </body>
 </html>
