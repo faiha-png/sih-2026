@@ -19,7 +19,7 @@
                     <span class="material-symbols-outlined mr-md">dashboard</span>
                     Overview
                 </a>
-                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="workers" href="worker_details.html">
+                <a aria-current="page" class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all" data-path="workers" href="worker_details.html">
                     <span class="material-symbols-outlined mr-md">engineering</span>
                     Workers
                 </a>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-sm">
-                            <button  class="h-12 px-md rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-xs shadow-sm">
+                            <button onclick="window.location.href='overview.html'" class="h-12 px-md rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-xs shadow-sm">
                                 <span class="material-symbols-outlined">arrow_back</span>
                                 Back to Workers
                             </button>
@@ -203,14 +203,14 @@
                                 </div>
                             </div>
                             <div class="bg-surface-container-lowest rounded-xl shadow-sm p-md border border-outline-variant/30 flex-1">
-                                <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-md">Why is Raju at risk?</h3>
+                                <h3 id="risk-reasons-heading" class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-md">Why is Raju at risk?</h3>
                                 <ul id="risk-reasons" class="space-y-sm"></ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <script src="data.js"></script>
-                <script src="js/worker-details.js"></script>
+                <script src="worker-details.js"></script>
 
 <script>
   document.getElementById('btn-resting').addEventListener('click', () => {

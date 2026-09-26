@@ -7,6 +7,7 @@
 //   workers -> information about PEOPLE    (identity, vitals, risk)
 //   watches -> information about DEVICES   (pairing, battery, connectivity)
 //   alerts  -> information about INCIDENTS (what happened, to whom, when)
+//   siteConditions   ->  info abou site temp, humidity, wbgt etc.
 //
 // Every HTML page (overview, watches, worker_details, network) reads from
 // these three arrays instead of hardcoding any names, numbers, or status

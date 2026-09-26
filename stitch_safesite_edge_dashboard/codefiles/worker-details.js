@@ -7,6 +7,9 @@ if (worker) {
     document.getElementById("worker-name").textContent =
         `${worker.name} (Watch #${worker.watchId})`;
 
+    document.getElementById("risk-reasons-heading").textContent =
+        `Why is ${worker.name} at risk?`;
+
     document.getElementById("risk-score").textContent = worker.risk;
 
     document.getElementById("worker-status").textContent =
