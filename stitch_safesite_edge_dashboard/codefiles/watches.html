@@ -1,5 +1,6 @@
 <html lang="en">
     <head>
+        <title>Bands</title>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
@@ -11,11 +12,10 @@
     <body class="bg-surface font-body-md text-on-surface">
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50">
             <div class="p-md flex items-center gap-base">
-                <span class="material-symbols-outlined text-primary">safety_check</span>
                 <span class="font-headline-md text-headline-md tracking-tight uppercase italic"><span class="text-on-surface">Thermi</span><span class="text-error">Q</span></span>
             </div>
             <nav class="flex-1 px-sm mt-md flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
-                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="overview.html">
+                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="index.html">
                     <span class="material-symbols-outlined mr-md">dashboard</span>
                     Overview
                 </a>
@@ -275,7 +275,7 @@
         const workerSelect = document.getElementById('workerSelect');
 
         // Summary card counts — computed from `watches` (data.js), mirroring
-        // the same filter logic as overview.html's renderNetworkWidget()
+        // the same filter logic as index.html's renderNetworkWidget()
         const summaryTotal = watches.length;
         const summaryConnected = watches.filter(w => w.connectionStatus === 'connected').length;
         const summaryOffline = watches.filter(w => w.connectionStatus === 'offline').length;

@@ -1,5 +1,6 @@
 <html lang="en">
     <head>
+        <title>ThermIQ | Overview</title>
         <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <link rel="stylesheet" href="styles.css"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"outline":"#737686","inverse-surface":"#2e3039","primary-container":"#2563eb","on-tertiary-container":"#ffede6","error":"#ba1a1a","on-primary-fixed":"#00174b","primary":"#004ac6","on-primary-container":"#eeefff","on-error-container":"#93000a","surface-bright":"#faf8ff","surface-variant":"#e1e2ed","surface-container":"#ededf9","secondary-fixed":"#d3e4fe","background":"#faf8ff","tertiary-container":"#bc4800","surface":"#faf8ff","tertiary":"#943700","on-primary":"#ffffff","secondary-container":"#d0e1fb","tertiary-fixed-dim":"#ffb596","on-error":"#ffffff","surface-tint":"#0053db","primary-fixed":"#dbe1ff","surface-container-low":"#f3f3fe","inverse-primary":"#b4c5ff","on-tertiary-fixed-variant":"#7d2d00","inverse-on-surface":"#f0f0fb","surface-container-highest":"#e1e2ed","on-surface-variant":"#434655","surface-container-high":"#e7e7f3","on-secondary-fixed":"#0b1c30","on-secondary-container":"#54647a","surface-container-lowest":"#ffffff","outline-variant":"#c3c6d7","error-container":"#ffdad6","tertiary-fixed":"#ffdbcd","on-tertiary-fixed":"#360f00","surface-dim":"#d9d9e5","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-background":"#191b23","on-primary-fixed-variant":"#003ea8","on-surface":"#191b23","on-secondary-fixed-variant":"#38485d","secondary-fixed-dim":"#b7c8e1","secondary":"#505f76","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"md":"24px","xs":"4px","margin-mobile":"16px","lg":"40px","sm":"12px","margin-desktop":"48px","gutter":"24px","xl":"64px","base":"8px"},"fontFamily":{"headline-md":["Inter"],"label-md":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"display-lg":["Inter"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
@@ -10,20 +11,19 @@
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 transition-all duration-300 ease-in-out select-none" id="sidebar">
         <div class="p-md flex items-center justify-between min-h-[72px]">
         <div class="flex items-center gap-base overflow-hidden">
-        <span class="material-symbols-outlined text-primary text-[28px] shrink-0">safety_check</span>
         <span class="sidebar-text font-headline-md text-headline-md tracking-tight uppercase whitespace-nowrap transition-all duration-200 italic"><span class="text-on-surface">Thermi</span><span class="text-error">Q</span></span>
         </div>
         <button aria-label="Toggle navigation sidebar" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors shrink-0" id="sidebar-toggle" title="Toggle Sidebar"><span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="toggle-icon">chevron_left</span></button></div>
         <nav class="flex-1 px-sm mt-sm flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
-            <a aria-current="page" class="nav-item flex items-center h-12 px-md rounded-xl font-label-md transition-all bg-primary text-on-primary shadow-sm group relative" data-path="overview" href="overview.html" title="Overview">
+            <a aria-current="page" class="nav-item flex items-center h-12 px-md rounded-xl font-label-md transition-all bg-primary text-on-primary shadow-sm group relative" data-path="overview" href="index.html" title="Overview">
             <span class="material-symbols-outlined shrink-0 mr-md nav-icon transition-all duration-200">dashboard</span>
             <span class="sidebar-text whitespace-nowrap transition-all duration-200">Overview</span></a>
             <a class="nav-item flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all group relative" data-path="workers" href="worker_details.html" title="Workers">
             <span class="material-symbols-outlined shrink-0 mr-md nav-icon transition-all duration-200">engineering</span>
             <span class="sidebar-text whitespace-nowrap transition-all duration-200">Workers</span></a>
-            <a class="nav-item flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all group relative" data-path="watches" href="watches.html" title="Watches">
+            <a class="nav-item flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all group relative" data-path="watches" href="watches.html" title="Band">
             <span class="material-symbols-outlined shrink-0 mr-md nav-icon transition-all duration-200">visibility</span>
-            <span class="sidebar-text whitespace-nowrap transition-all duration-200">Watches</span></a>
+            <span class="sidebar-text whitespace-nowrap transition-all duration-200">Band</span></a>
         </nav>
         <div class="p-md mt-auto bg-surface-container border-t border-outline-variant/30 flex flex-col gap-sm overflow-hidden transition-all duration-300" id="sidebar-footer">
         <div class="flex items-center gap-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0" title="Manoj Sharma">
@@ -68,6 +68,7 @@
         <span class="material-symbols-outlined text-primary">check_circle</span>
         </div>
         <span class="font-display-lg text-display-lg text-on-surface" id="stat-safe-count">0</span>
+        <span class="font-body-md text-label-sm text-on-surface-variant">Workers within safe limits</span>
         </div>
         <div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-sm border border-tertiary-container/30 relative overflow-hidden">
         <div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary-container/10 rounded-full blur-2xl"></div>
@@ -76,6 +77,7 @@
         <span class="material-symbols-outlined text-tertiary">warning</span>
         </div>
         <span class="font-display-lg text-display-lg text-tertiary relative z-10" id="stat-warning-count">0</span>
+        <span class="font-body-md text-label-sm text-on-surface-variant relative z-10">Workers to monitor closely</span>
         </div>
         <div class="bg-error-container p-md rounded-xl shadow-md flex flex-col gap-sm border border-error/20 relative overflow-hidden">
         <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-error/20 rounded-full blur-3xl"></div>
@@ -84,29 +86,10 @@
         <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
         </div>
         <span class="font-display-lg text-display-lg text-on-error-container relative z-10" id="stat-critical-count">0</span>
+        <span class="font-body-md text-label-sm text-on-error-container/80 relative z-10">Workers needing immediate action</span>
         </div>
         </div>
-        <div class="flex flex-col gap-lg"><div class="hidden bg-error-container/40 border-2 border-error p-md rounded-xl shadow-md flex-col md:flex-row justify-between items-start md:items-center gap-md relative overflow-hidden" id="active-alert-banner"><div class="absolute -right-8 -top-8 w-40 h-40 bg-error/10 rounded-full blur-3xl pointer-events-none"></div><div class="flex items-start gap-md z-10"><div class="w-12 h-12 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[28px] animate-pulse" style="font-variation-settings: 'FILL' 1;">emergency</span></div><div class="flex flex-col gap-xs"><div class="flex flex-wrap items-center gap-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider font-bold bg-error text-on-error px-2 py-0.5 rounded-full">Active Alert</span><span class="font-headline-md text-headline-md text-error font-bold tracking-tight" id="active-alert-title">—</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm text-error font-semibold" id="active-alert-time">—</span></div><p class="font-body-md text-body-md text-on-surface" id="active-alert-desc">Loading alert details…</p><div class="flex items-center gap-md mt-xs"><div class="flex items-center gap-xs font-label-md text-label-md"><span class="text-on-surface-variant">Risk Score:</span><span class="font-bold text-error bg-surface-container-lowest px-2 py-0.5 rounded border border-error/30" id="active-alert-risk">— / 100</span></div><div class="flex items-center gap-xs font-label-sm text-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_on</span><span id="active-alert-zone">—</span></div></div></div></div><div class="flex flex-wrap gap-sm z-10 w-full md:w-auto mt-2 md:mt-0"><button id="banner-dispatch-btn" onclick="this.innerHTML='<span class=&quot;material-symbols-outlined text-[18px]&quot;>check_circle</span>Supervisor Dispatched'; this.classList.remove('bg-error','hover:bg-error/90','text-on-error'); this.classList.add('bg-primary','hover:bg-primary/90','text-on-primary');" class="flex-1 md:flex-none h-12 px-md bg-error hover:bg-error/90 text-on-error rounded-xl font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-xs transition-colors"><span class="material-symbols-outlined text-[18px]">e911_emergency</span>Dispatch Supervisor</button><button id="banner-acknowledge-btn" class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Acknowledge</button><button id="banner-profile-btn" class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-primary border border-primary/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Worker Profile</button></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-lg"><div class="lg:col-span-2 flex flex-col gap-md"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm"><div class="flex items-center gap-sm"><h2 class="font-headline-md text-headline-md text-on-surface">Alert Management &amp; History</h2><span class="flex h-6 w-6 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold" id="active-alerts-badge">2</span></div><div class="flex items-center gap-xs bg-surface-container-high p-1 rounded-xl self-start sm:self-auto" id="alert-tabs"><button class="px-3 py-1 text-label-sm font-label-sm text-error hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-critical" data-filter="critical" onclick="setAlertFilter('critical')">Critical (<span id="tab-critical-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-tertiary hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-warning" data-filter="warning" onclick="setAlertFilter('warning')">Warning (<span id="tab-warning-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-resolved" data-filter="resolved" onclick="setAlertFilter('resolved')">Resolved (<span id="tab-resolved-count">8</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm bg-surface-container-lowest text-on-surface shadow-sm rounded-lg font-semibold" id="alert-tab-all" data-filter="all" onclick="setAlertFilter('all')">All</button></div></div><div class="flex flex-col gap-sm" id="alerts-container"><!-- Rows injected via JS from data.js `alerts` + `workers` --></div></div><div class="flex flex-col gap-md"><h2 class="font-headline-md text-headline-md text-on-surface">Environmental &amp; Site Status</h2><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md border border-outline-variant/30"><div class="flex items-center justify-between"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-tertiary">thermostat</span><span class="font-label-md text-label-md font-semibold text-on-surface">Site Microclimate</span></div><span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold uppercase" id="env-risk-badge">Extreme Risk</span></div><div class="grid grid-cols-3 gap-sm py-xs border-y border-outline-variant/20"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Air Temp</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-air-temp">0°C</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Humidity</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-humidity">0%</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">WBGT Index</span><span class="font-headline-md text-headline-md text-error font-bold" id="env-wbgt">0°C</span></div></div><div class="flex flex-col gap-xs"><div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"><span>WBGT 6-Hour Heat Trend</span><span class="text-error font-semibold" id="env-trend-rate">+0°C / hr</span></div><div class="h-12 w-full flex items-end gap-1 pt-2" id="env-trend-bars"><!-- Bars injected via JS from data.js `siteConditions.wbgtHistory` --></div></div></div><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md relative overflow-hidden"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-on-surface-variant font-semibold">Watch Network</span><span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">Network Healthy</span></div><div class="flex items-baseline gap-xs"><span class="font-headline-lg text-headline-lg text-on-surface font-bold" id="network-connected-count"></span><span class="font-body-md text-body-md text-on-surface-variant">/ <span id="network-total-count">0</span> connected</span></div><div class="flex flex-col gap-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[18px]">wifi</span></div><span class="font-body-md text-body-md text-on-surface">Connected</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-connected-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline text-[18px]">wifi_off</span></div><span class="font-body-md text-body-md text-on-surface">Offline</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-offline-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-tertiary text-[18px]">battery_alert</span></div><span class="font-body-md text-body-md text-on-surface">Low Battery</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-lowbattery-row-count"></span></div></div></div></div></div></div>
-        <div class="flex flex-col gap-md mt-md">
-        <h2 class="font-headline-md text-headline-md text-on-surface">Workers</h2>
-        <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden overflow-x-auto">
-        <table class="w-full text-left border-collapse min-w-[800px]">
-        <thead class="bg-surface-container-high/50 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
-        <tr>
-        <th class="p-4 font-semibold">Worker</th>
-        <th class="p-4 font-semibold">Watch</th>
-        <th class="p-4 font-semibold">Status</th>
-        <th class="p-4 font-semibold">Risk</th>
-        <th class="p-4 font-semibold">Last Update</th>
-        <th class="p-4 font-semibold text-right">Action</th>
-        </tr>
-        </thead>
-        <tbody class="font-body-md text-body-md text-on-surface" id="workers-table-body">
-        <!-- Rows injected via JS -->
-        </tbody>
-        </table>
-        </div>
-        </div>
+        <div class="flex flex-col gap-lg"><div class="hidden p-md rounded-xl shadow-md flex-col md:flex-row justify-between items-start md:items-center gap-md relative overflow-hidden border-2" id="active-alert-banner"><div class="absolute -right-8 -top-8 w-40 h-40 rounded-full blur-3xl pointer-events-none" id="banner-glow"></div><div class="flex items-start gap-md z-10"><div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm" id="banner-icon-wrap"><span class="material-symbols-outlined text-[28px] animate-pulse" style="font-variation-settings: 'FILL' 1;" id="banner-icon">emergency</span></div><div class="flex flex-col gap-xs"><div class="flex flex-wrap items-center gap-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider font-bold px-2 py-0.5 rounded-full" id="banner-badge">Active Alert</span><span class="font-headline-md text-headline-md font-bold tracking-tight" id="active-alert-title">—</span><span class="text-on-surface-variant text-[12px]">•</span><span class="font-label-sm text-label-sm font-semibold" id="active-alert-time">—</span></div><p class="font-body-md text-body-md text-on-surface" id="active-alert-desc">Loading alert details…</p><div class="flex items-center gap-md mt-xs"><div class="flex items-center gap-xs font-label-md text-label-md"><span class="text-on-surface-variant">Risk Score:</span><span class="font-bold text-[15px]" id="active-alert-risk">— / 100</span></div><div class="flex items-center gap-xs font-label-sm text-label-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_on</span><span id="active-alert-zone">—</span></div></div></div></div><div class="flex flex-wrap gap-sm z-10 w-full md:w-auto mt-2 md:mt-0"><button id="banner-dispatch-btn" class="flex-1 md:flex-none h-12 px-md bg-error hover:bg-error/90 text-on-error rounded-xl font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-xs transition-colors"><span class="material-symbols-outlined text-[18px]">e911_emergency</span>Dispatch Supervisor</button><button id="banner-acknowledge-btn" class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Acknowledge</button><button id="banner-profile-btn" class="flex-1 md:flex-none h-12 px-md bg-surface-container-lowest hover:bg-surface-container-high text-primary border border-primary/30 rounded-xl font-label-md text-label-md font-medium transition-colors">Worker Profile</button></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-lg"><div class="lg:col-span-2 flex flex-col gap-md"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-sm"><div class="flex items-center gap-sm"><h2 class="font-headline-md text-headline-md text-on-surface">Alert Management &amp; History</h2><span class="flex h-6 w-6 items-center justify-center rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold" id="active-alerts-badge">2</span></div><div class="flex items-center gap-xs bg-surface-container-high p-1 rounded-xl self-start sm:self-auto" id="alert-tabs"><button class="px-3 py-1 text-label-sm font-label-sm text-error hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-critical" data-filter="critical" onclick="setAlertFilter('critical')">Critical (<span id="tab-critical-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-amber-600 hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-warning" data-filter="warning" onclick="setAlertFilter('warning')">Warning (<span id="tab-warning-count">1</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-lowest/60 rounded-lg transition-colors font-medium" id="alert-tab-resolved" data-filter="resolved" onclick="setAlertFilter('resolved')">Resolved (<span id="tab-resolved-count">8</span>)</button><button class="px-3 py-1 text-label-sm font-label-sm bg-surface-container-lowest text-on-surface shadow-sm rounded-lg font-semibold" id="alert-tab-all" data-filter="all" onclick="setAlertFilter('all')">All</button></div></div><div class="flex flex-col gap-sm" id="alerts-container"><!-- Rows injected via JS from data.js `alerts` + `workers` --></div></div><div class="flex flex-col gap-md"><h2 class="font-headline-md text-headline-md text-on-surface">Environmental &amp; Site Status</h2><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md border border-outline-variant/30"><div class="flex items-center justify-between"><div class="flex items-center gap-xs"><span class="material-symbols-outlined text-tertiary">thermostat</span><span class="font-label-md text-label-md font-semibold text-on-surface">Site Microclimate</span></div><span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold uppercase" id="env-risk-badge">Extreme Risk</span></div><div class="grid grid-cols-3 gap-sm py-xs border-y border-outline-variant/20"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Air Temp</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-air-temp">0°C</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">Humidity</span><span class="font-headline-md text-headline-md text-on-surface font-bold" id="env-humidity">0%</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">WBGT Index</span><span class="font-headline-md text-headline-md text-error font-bold" id="env-wbgt">0°C</span></div></div><div class="flex flex-col gap-xs"><div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"><span>WBGT 6-Hour Heat Trend</span><span class="text-error font-semibold" id="env-trend-rate">+0°C / hr</span></div><div class="h-12 w-full flex items-end gap-1 pt-2" id="env-trend-bars"><!-- Bars injected via JS from data.js `siteConditions.wbgtHistory` --></div></div></div><div class="bg-surface-container-lowest p-md rounded-xl shadow-md flex flex-col gap-md relative overflow-hidden"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-on-surface-variant font-semibold">Band Network</span><span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">Network Healthy</span></div><div class="flex items-baseline gap-xs"><span class="font-headline-lg text-headline-lg text-on-surface font-bold" id="network-connected-count"></span><span class="font-body-md text-body-md text-on-surface-variant">/ <span id="network-total-count">0</span> connected</span></div><div class="flex flex-col gap-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[18px]">wifi</span></div><span class="font-body-md text-body-md text-on-surface">Connected</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-connected-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-outline text-[18px]">wifi_off</span></div><span class="font-body-md text-body-md text-on-surface">Offline</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-offline-row-count"></span></div><div class="flex items-center justify-between"><div class="flex items-center gap-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-tertiary text-[18px]">battery_alert</span></div><span class="font-body-md text-body-md text-on-surface">Low Battery</span></div><span class="font-label-md text-label-md text-on-surface font-bold" id="network-lowbattery-row-count"></span></div></div></div></div></div></div>
             </div>
 
 
@@ -221,6 +204,16 @@
                     return mockData.workers.find(w => w.id === id);
                 }
 
+                // Severity (critical vs warning) is derived from the worker's
+                // live risk score rather than the alert's hand-typed `type`,
+                // so coloring/labels/filters can never drift out of sync with
+                // how urgent things actually are right now.
+                //   risk > 85        -> critical
+                //   65 < risk <= 85  -> warning
+                function getRiskSeverity(risk) {
+                    return risk > 85 ? 'critical' : 'warning';
+                }
+
                 // Alert filter tabs: 'critical' | 'warning' | 'resolved' | 'all'.
                 // 'all' means "all active alerts" (critical + warning) --
                 // resolved alerts are only shown when the Resolved tab is
@@ -230,9 +223,15 @@
                 function getFilteredAlerts() {
                     switch (currentAlertFilter) {
                         case 'critical':
-                            return mockData.alerts.filter(a => a.status === 'active' && a.type === 'critical');
+                            return mockData.alerts.filter(a => {
+                                const w = getWorker(a.workerId);
+                                return a.status === 'active' && w && getRiskSeverity(w.risk) === 'critical';
+                            });
                         case 'warning':
-                            return mockData.alerts.filter(a => a.status === 'active' && a.type === 'warning');
+                            return mockData.alerts.filter(a => {
+                                const w = getWorker(a.workerId);
+                                return a.status === 'active' && w && getRiskSeverity(w.risk) === 'warning';
+                            });
                         case 'resolved':
                             // Resolved tab groups both resolved and acknowledged
                             // alerts together -- both are "closed" from an
@@ -281,25 +280,128 @@
                 updateTime();
 
                 // Render Active Alert Banner (highest-risk worker with an active alert)
+                // Dispatch state lives on the alert itself (alert.dispatched),
+                // not on the button — so the button always reflects whichever
+                // alert currently occupies the banner, instead of getting
+                // stuck showing "Dispatched" for an alert that has since been
+                // acknowledged and replaced by a different one.
+                function updateDispatchButtonUI(alert) {
+                    const btn = document.getElementById('banner-dispatch-btn');
+                    if (alert.dispatched) {
+                        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span>Supervisor Dispatched';
+                        btn.classList.remove('bg-error', 'hover:bg-error/90', 'text-on-error');
+                        btn.classList.add('bg-primary', 'hover:bg-primary/90', 'text-on-primary');
+                        btn.disabled = true;
+                    } else {
+                        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">e911_emergency</span>Dispatch Supervisor';
+                        btn.classList.remove('bg-primary', 'hover:bg-primary/90', 'text-on-primary');
+                        btn.classList.add('bg-error', 'hover:bg-error/90', 'text-on-error');
+                        btn.disabled = false;
+                    }
+                }
+
+                function dispatchSupervisor(alertId) {
+                    const alert = mockData.alerts.find(a => a.id === alertId);
+                    if (!alert) return;
+                    alert.dispatched = true;
+                    // Only refresh the button if this alert is still the one
+                    // showing in the banner.
+                    if (document.getElementById('active-alert-banner').dataset.alertId === alertId) {
+                        updateDispatchButtonUI(alert);
+                    }
+                }
+
+                // Applies critical (red) or warning (amber) styling to every
+                // color-coded element in the active alert banner, based on
+                // the worker's live risk score -- so a moderate warning no
+                // longer reads as visually identical to a true emergency.
+                const bannerSeverityStyles = {
+                    critical: {
+                        containerBg: 'bg-error-container/40',
+                        containerBorder: 'border-error',
+                        glowBg: 'bg-error/10',
+                        iconBg: 'bg-error',
+                        iconText: 'text-on-error',
+                        iconGlyph: 'emergency',
+                        textColor: 'text-error'
+                    },
+                    warning: {
+                        containerBg: 'bg-amber-50',
+                        containerBorder: 'border-amber-500',
+                        glowBg: 'bg-amber-500/10',
+                        iconBg: 'bg-amber-500',
+                        iconText: 'text-white',
+                        iconGlyph: 'warning',
+                        textColor: 'text-amber-600'
+                    }
+                };
+
+                function applyBannerSeverity(severity) {
+                    const cfg = bannerSeverityStyles[severity] || bannerSeverityStyles.warning;
+                    const banner = document.getElementById('active-alert-banner');
+                    const glow = document.getElementById('banner-glow');
+                    const iconWrap = document.getElementById('banner-icon-wrap');
+                    const icon = document.getElementById('banner-icon');
+                    const badge = document.getElementById('banner-badge');
+                    const title = document.getElementById('active-alert-title');
+                    const time = document.getElementById('active-alert-time');
+                    const riskValue = document.getElementById('active-alert-risk');
+
+                    // Strip any previously-applied severity classes first, so
+                    // re-rendering for a different alert never stacks colors.
+                    const bgClasses = ['bg-error-container/40', 'bg-amber-50'];
+                    const borderClasses = ['border-error', 'border-amber-500'];
+                    const glowClasses = ['bg-error/10', 'bg-amber-500/10'];
+                    const chipBgClasses = ['bg-error', 'bg-amber-500'];
+                    const chipTextClasses = ['text-on-error', 'text-white'];
+                    const textClasses = ['text-error', 'text-amber-600'];
+
+                    banner.classList.remove(...bgClasses, ...borderClasses);
+                    banner.classList.add(cfg.containerBg, cfg.containerBorder);
+
+                    glow.classList.remove(...glowClasses);
+                    glow.classList.add(cfg.glowBg);
+
+                    iconWrap.classList.remove(...chipBgClasses, ...chipTextClasses);
+                    iconWrap.classList.add(cfg.iconBg, cfg.iconText);
+                    icon.textContent = cfg.iconGlyph;
+
+                    badge.classList.remove(...chipBgClasses, ...chipTextClasses);
+                    badge.classList.add(cfg.iconBg, cfg.iconText);
+
+                    title.classList.remove(...textClasses);
+                    title.classList.add(cfg.textColor);
+
+                    time.classList.remove(...textClasses);
+                    time.classList.add(cfg.textColor);
+
+                    riskValue.classList.remove(...textClasses);
+                    riskValue.classList.add(cfg.textColor);
+                }
+
                 function renderActiveAlertBanner() {
                     const banner = document.getElementById('active-alert-banner');
                     const active = mockData.alerts.filter(a => a.status === 'active');
                     if (active.length === 0) {
                         banner.classList.add('hidden');
                         banner.classList.remove('flex');
+                        delete banner.dataset.alertId;
                         return;
                     }
                     const top = active.map(a => ({ alert: a, worker: getWorker(a.workerId) }))
                                        .filter(x => x.worker)
                                        .sort((a, b) => b.worker.risk - a.worker.risk)[0];
-                    if (!top || top.worker.risk<50) {
+                    if (!top || top.worker.risk<=65) {
                         banner.classList.add('hidden');
                         banner.classList.remove('flex');
+                        delete banner.dataset.alertId;
                         return;
                     }
                     banner.classList.remove('hidden');
                     banner.classList.add('flex');
                     const { alert, worker } = top;
+                    banner.dataset.alertId = alert.id;
+                    applyBannerSeverity(getRiskSeverity(worker.risk));
                     document.getElementById('active-alert-title').textContent = alert.issue;
                     document.getElementById('active-alert-time').textContent = alert.time;
                     document.getElementById('active-alert-risk').textContent = `${worker.risk} / 100`;
@@ -311,20 +413,22 @@
                         ? `Heart rate ${r.heartRate} bpm, skin temp ${r.skinTemp}°C.`
                         : '';
                     document.getElementById('active-alert-desc').innerHTML =
-                        `Worker <strong class="font-semibold text-on-surface">${worker.name} (Watch #${worker.watchId})</strong> — ${readingText}`;
+                        `Worker <strong class="font-semibold text-on-surface">${worker.name} (Band #${worker.watchId})</strong> — ${readingText}`;
 
                     // Wire the banner's action buttons to this alert/worker
                     document.getElementById('banner-acknowledge-btn').onclick = () => acknowledgeAlert(alert.id);
                     document.getElementById('banner-profile-btn').onclick = () =>
                         window.location.href = 'worker_details.html?id=' + worker.id;
+                    document.getElementById('banner-dispatch-btn').onclick = () => dispatchSupervisor(alert.id);
+                    updateDispatchButtonUI(alert);
                 }
 
                 // Render Alerts (all types: critical / warning / resolved)
                 function renderAlerts() {
                     const container = document.getElementById('alerts-container');
-                    const styleByType = {
+                    const styleBySeverity = {
                         critical: { border: 'border-error', label: 'text-error' },
-                        warning: { border: 'border-tertiary', label: 'text-tertiary' },
+                        warning: { border: 'border-amber-500', label: 'text-amber-600' },
                         resolved: { border: 'border-outline-variant', label: 'text-outline' }
                     };
                     const filteredAlerts = getFilteredAlerts();
@@ -335,12 +439,15 @@
                     container.innerHTML = filteredAlerts.map(alert => {
                         const worker = getWorker(alert.workerId);
                         if (!worker) return '';
-                        const s = styleByType[alert.type] || styleByType.warning;
                         // "Resolved" (closed) covers both status values --
                         // acknowledged alerts render alongside resolved ones,
-                        // just with their own badge text.
+                        // just with their own badge text. Closed alerts always
+                        // get the neutral style regardless of severity.
                         const isResolved = alert.status === 'resolved' || alert.status === 'acknowledged';
+                        const severity = isResolved ? 'resolved' : getRiskSeverity(worker.risk);
+                        const s = styleBySeverity[severity];
                         const closedLabel = alert.status === 'acknowledged' ? 'Acknowledged' : 'Resolved';
+                        const typeLabel = isResolved ? closedLabel : (severity === 'critical' ? 'Critical' : 'Warning');
                         const actions = isResolved
                             ? `<span class="font-label-sm text-label-sm text-outline px-3 py-1.5 bg-surface-container rounded-lg flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">check</span>${closedLabel}</span>`
                             : `<button class="flex-1 md:flex-none h-12 px-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" onclick="window.location.href='worker_details.html?id=${worker.id}'">View Worker</button>
@@ -349,14 +456,14 @@
                         <div class="bg-surface-container-lowest${isResolved ? '/80' : ''} p-md rounded-xl shadow-${isResolved ? 'sm' : 'md'} flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-l-4 ${s.border} hover:shadow-lg transition-shadow">
                             <div class="flex flex-col gap-xs">
                                 <div class="flex items-center gap-xs">
-                                    <span class="font-label-sm text-label-sm uppercase ${s.label} tracking-widest font-bold">${alert.type}</span>
+                                    <span class="font-label-sm text-label-sm uppercase ${s.label} tracking-widest font-bold">${typeLabel}</span>
                                     <span class="text-on-surface-variant text-[12px]">•</span>
                                     <span class="font-label-sm text-label-sm text-on-surface-variant">${alert.time}</span>
                                     <span class="text-on-surface-variant text-[12px]">•</span>
                                     <span class="font-label-sm text-label-sm text-outline">${alert.zone}</span>
                                 </div>
                                 <div class="font-body-lg text-body-lg text-on-surface font-${isResolved ? 'medium' : 'semibold'}">
-                                    <span class="cursor-pointer hover:text-primary transition-colors" onclick="window.location.href='worker_details.html?id=${worker.id}'">${worker.name}</span> — Watch #${worker.watchId}
+                                    <span class="cursor-pointer hover:text-primary transition-colors" onclick="window.location.href='worker_details.html?id=${worker.id}'">${worker.name}</span> — Band #${worker.watchId}
                                 </div>
                                 <div class="font-body-md text-body-md text-on-surface-variant">${alert.issue}</div>
                             </div>
@@ -370,8 +477,14 @@
 
                 // Render Alert Management badge + filter tab counts
                 function renderAlertCounts() {
-                    const critical = mockData.alerts.filter(a => a.status === 'active' && a.type === 'critical').length;
-                    const warning = mockData.alerts.filter(a => a.status === 'active' && a.type === 'warning').length;
+                    const critical = mockData.alerts.filter(a => {
+                        const w = getWorker(a.workerId);
+                        return a.status === 'active' && w && getRiskSeverity(w.risk) === 'critical';
+                    }).length;
+                    const warning = mockData.alerts.filter(a => {
+                        const w = getWorker(a.workerId);
+                        return a.status === 'active' && w && getRiskSeverity(w.risk) === 'warning';
+                    }).length;
                     const resolved = mockData.alerts.filter(a => a.status === 'resolved' || a.status === 'acknowledged').length;
                     const activeTotal = mockData.alerts.filter(a => a.status === 'active').length;
 
@@ -379,49 +492,6 @@
                     document.getElementById('tab-critical-count').textContent = critical;
                     document.getElementById('tab-warning-count').textContent = warning;
                     document.getElementById('tab-resolved-count').textContent = resolved;
-                }
-
-                // Render Workers
-                function renderWorkers() {
-                    const tbody = document.getElementById('workers-table-body');
-                    
-                    const statusConfig = {
-                        'critical': { color: 'text-error', bg: 'bg-error-container', icon: 'error' },
-                        'warning': { color: 'text-tertiary', bg: 'bg-tertiary-container/20', icon: 'warning' },
-                        'safe': { color: 'text-primary', bg: 'bg-primary-container/10', icon: 'check_circle' }
-                    };
-
-                    tbody.innerHTML = mockData.workers.map(w => `
-                        <tr class="hover:bg-surface-container/50 transition-colors cursor-pointer group" onclick="window.location.href='worker_details.html?id=${w.id}'">
-                            <td class="p-4 py-4">
-                                <div class="flex items-center gap-sm">
-                                    <div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center font-label-md text-label-md text-on-surface-variant">
-                                        ${w.name.charAt(0)}
-                                    </div>
-                                    <span class="font-label-md text-label-md group-hover:text-primary transition-colors">${w.name}</span>
-                                </div>
-                            </td>
-                            <td class="p-4 font-body-md text-on-surface-variant">#${w.watchId}</td>
-                            <td class="p-4">
-                                <div class="inline-flex items-center gap-xs px-2 py-1 rounded-full ${statusConfig[w.status].bg}">
-                                    <span class="material-symbols-outlined text-[14px] ${statusConfig[w.status].color}" style="font-variation-settings: 'FILL' 1;">${statusConfig[w.status].icon}</span>
-                                    <span class="font-label-sm text-label-sm ${statusConfig[w.status].color}">${STATUS_LABELS[w.status]}</span>
-                                </div>
-                            </td>
-                            <td class="p-4">
-                                <div class="flex items-center gap-sm">
-                                    <span class="font-body-md w-8">${w.risk}</span>
-                                    <div class="flex-1 h-1.5 bg-surface-container rounded-full max-w-[100px] overflow-hidden">
-                                        <div class="h-full rounded-full ${w.risk > 80 ? 'bg-error' : w.risk > 50 ? 'bg-tertiary' : 'bg-primary'}" style="width: ${w.risk}%"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="p-4 font-body-md text-on-surface-variant">${w.lastUpdate}</td>
-                            <td class="p-4 text-right">
-                                <button class="h-10 px-4 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md transition-colors" onclick="event.stopPropagation(); window.location.href='worker_details.html?id=${w.id}'">View</button>
-                            </td>
-                        </tr>
-                    `).join('');
                 }
 
                 // Render Stats (unchanged logic — worker.active/worker.status
@@ -500,7 +570,6 @@
                 renderAlertCounts();
                 updateAlertTabStyles();
                 renderAlerts();
-                renderWorkers();
                 renderNetworkWidget();
                 renderEnvironmental();
             </script>
