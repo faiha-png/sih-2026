@@ -1,5 +1,6 @@
 <html lang="en">
     <head>
+        <title>Bands</title>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
@@ -11,11 +12,10 @@
     <body class="bg-surface font-body-md text-on-surface">
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50">
             <div class="p-md flex items-center gap-base">
-                <span class="material-symbols-outlined text-primary">safety_check</span>
-                <span class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase">Site Safety</span>
+                <span class="font-headline-md text-headline-md tracking-tight uppercase italic"><span class="text-on-surface">Thermi</span><span class="text-error">Q</span></span>
             </div>
             <nav class="flex-1 px-sm mt-md flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
-                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="overview.html">
+                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="index.html">
                     <span class="material-symbols-outlined mr-md">dashboard</span>
                     Overview
                 </a>
@@ -34,13 +34,9 @@
                         <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-label-md text-label-md text-on-surface">Site Supervisor</span>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant">Construction Site A</span>
+                        <span class="font-label-md text-label-md text-on-surface">Manoj Sharma</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">Central Metro, Site 3</span>
                     </div>
-                </div>
-                <div class="flex items-center gap-xs text-[12px] font-label-sm text-on-surface-variant">
-                    <div class="w-2 h-2 rounded-full bg-primary"></div>
-                    System Online
                 </div>
             </div>
         </aside>
@@ -48,13 +44,9 @@
             <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
                 <div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">
                     <span class="material-symbols-outlined text-[18px]">location_on</span>
-                    Construction Site A
+                    Central Metro, Site 3
                 </div>
                 <div class="flex items-center gap-md">
-                    <div class="flex items-center gap-xs px-sm py-xs bg-primary/10 rounded-full border border-primary/20">
-                        <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span class="text-[11px] font-label-sm text-primary uppercase font-bold tracking-tighter">Live Feed</span>
-                    </div>
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                         <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
                     </div>
@@ -82,10 +74,10 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-on-surface tracking-tight">48</span>
+                                <span id="summary-connected-count" class="font-headline-lg text-[36px] font-bold text-on-surface tracking-tight">48</span>
                                 <span class="font-label-md text-label-md text-primary font-medium">↑ 96%</span>
                             </div>
-                            <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">48 / 50 online devices</span>
+                            <span id="summary-connected-subtitle" class="font-body-md text-label-sm text-on-surface-variant mt-xs">48 / 50 online devices</span>
                         </div>
                         <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
                             <div class="flex items-center justify-between">
@@ -96,7 +88,7 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-error tracking-tight">2</span>
+                                <span id="summary-offline-count" class="font-headline-lg text-[36px] font-bold text-error tracking-tight">2</span>
                                 <span class="font-label-md text-label-md text-error font-medium">Devices</span>
                             </div>
                             <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Requires reconnection</span>
@@ -110,7 +102,7 @@
                                 </span>
                             </div>
                             <div class="mt-md flex items-baseline gap-sm">
-                                <span class="font-headline-lg text-[36px] font-bold text-tertiary tracking-tight">3</span>
+                                <span id="summary-lowbattery-count" class="font-headline-lg text-[36px] font-bold text-tertiary tracking-tight">3</span>
                                 <span class="font-label-md text-label-md text-tertiary font-medium">&lt; 15%</span>
                             </div>
                             <span class="font-body-md text-label-sm text-on-surface-variant mt-xs">Needs docking &amp; charge</span>
@@ -282,6 +274,19 @@
         const watchSelect = document.getElementById('watchSelect');
         const workerSelect = document.getElementById('workerSelect');
 
+        // Summary card counts — computed from `watches` (data.js), mirroring
+        // the same filter logic as index.html's renderNetworkWidget()
+        const summaryTotal = watches.length;
+        const summaryConnected = watches.filter(w => w.connectionStatus === 'connected').length;
+        const summaryOffline = watches.filter(w => w.connectionStatus === 'offline').length;
+        const summaryLowBattery = watches.filter(w => w.battery < 15).length;
+
+        document.getElementById('summary-connected-count').textContent = summaryConnected;
+        document.getElementById('summary-connected-subtitle').textContent =
+            `${summaryConnected} / ${summaryTotal} online devices`;
+        document.getElementById('summary-offline-count').textContent = summaryOffline;
+        document.getElementById('summary-lowbattery-count').textContent = summaryLowBattery;
+
         // Fill worker dropdown from data.js
         workerSelect.innerHTML = '<option value="">Select a worker</option>';
 
@@ -425,6 +430,6 @@
             </main>
         </div>
     <script src="data.js"></script>
-    <script src="js/watches.js"></script>
+    <script src="watches.js"></script>
     </body>
 </html>
