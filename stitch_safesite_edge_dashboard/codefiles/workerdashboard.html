@@ -155,13 +155,8 @@
               Worker: <span class="font-semibold text-slate-700">Fathima (Worker #12)</span> • Zone 4: North Foundation Excavation
             </p>
 </div>
-<!-- Utility Pill & Urgent Need Help Action -->
+<!-- Urgent Need Help Action -->
 <div class="flex items-center space-x-3">
-<div class="hidden sm:flex items-center space-x-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200 text-xs text-slate-600 shadow-xs">
-<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-<span class="">Updated <strong id="lastUpdateTimestamp">12 sec ago</strong></span>
-<button class="ml-1 text-brand-600 hover:text-brand-700 font-medium" onclick="refreshData()" title="Sync latest watch telemetry">↻ Sync</button>
-</div>
 <!-- Distinct Outlined RED EMERGENCY BUTTON -->
 <button class="flex items-center space-x-2 px-4 py-2 rounded-xl border-2 border-red-500 bg-red-50 hover:bg-red-100 text-red-700 font-bold text-sm shadow-xs transition-colors active:scale-95" onclick="openHelpModal()">
 <svg class="w-4 h-4 text-red-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -545,6 +540,75 @@
 <span class="font-bold text-slate-900">Total Work Duration: 3h 48m</span>
 </div>
 </div>
+<!-- BEGIN: AlertsAndSafetyEventsHistoryCard -->
+<div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-card">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+<div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">EVENT LOG</span>
+<h3 class="text-base font-extrabold text-slate-900 mt-0.5">ALERTS &amp; SAFETY EVENTS HISTORY</h3>
+</div>
+<span class="text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-100 px-2.5 py-0.5 rounded-full">4 Events Today</span>
+</div>
+<div class="space-y-2.5">
+<!-- EVENT 1: CRITICAL -->
+<div class="p-3 rounded-xl border border-red-200 bg-red-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start space-x-3">
+<span class="px-2 py-0.5 text-[10px] font-black uppercase rounded bg-red-100 text-red-700 tracking-wider flex-shrink-0 mt-0.5">CRITICAL</span>
+<div>
+<h4 class="text-xs font-bold text-slate-900">Heat Stroke Danger</h4>
+<p class="text-[11px] text-slate-600 mt-0.5">Immediate heat strain detected, heart rate spike detected.</p>
+<span class="text-[10px] text-slate-400 font-medium">Detected 12 sec ago</span>
+</div>
+</div>
+<div class="sm:text-right flex-shrink-0">
+<span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-red-100 text-red-700 border border-red-200 whitespace-nowrap">Action Required</span>
+</div>
+</div>
+<!-- EVENT 2: WARNING -->
+<div class="p-3 rounded-xl border border-amber-200 bg-amber-50/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start space-x-3">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-amber-100 text-amber-800 tracking-wider flex-shrink-0 mt-0.5">WARNING</span>
+<div>
+<h4 class="text-xs font-bold text-slate-900">Rising Heat Strain</h4>
+<p class="text-[11px] text-slate-600 mt-0.5">Core temperature elevation in excavation zone.</p>
+<span class="text-[10px] text-slate-400 font-medium">Today, 2:15 PM</span>
+</div>
+</div>
+<div class="sm:text-right flex-shrink-0">
+<span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-100 text-emerald-700 border border-emerald-300 whitespace-nowrap">Resolved</span>
+</div>
+</div>
+<!-- EVENT 3: NOTICE -->
+<div class="p-3 rounded-xl border border-slate-200 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start space-x-3">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-brand-100 text-brand-700 tracking-wider flex-shrink-0 mt-0.5">NOTICE</span>
+<div>
+<h4 class="text-xs font-bold text-slate-900">Hydration Reminder</h4>
+<p class="text-[11px] text-slate-600 mt-0.5">Scheduled fluid replacement advisory.</p>
+<span class="text-[10px] text-slate-400 font-medium">Today, 1:00 PM</span>
+</div>
+</div>
+<div class="sm:text-right flex-shrink-0">
+<span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold text-slate-600 bg-slate-200/80 border border-slate-300 whitespace-nowrap">Confirmed</span>
+</div>
+</div>
+<!-- EVENT 4: WARNING -->
+<div class="p-3 rounded-xl border border-amber-200 bg-amber-50/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start space-x-3">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-amber-100 text-amber-800 tracking-wider flex-shrink-0 mt-0.5">WARNING</span>
+<div>
+<h4 class="text-xs font-bold text-slate-900">Elevated Heat Exposure</h4>
+<p class="text-[11px] text-slate-600 mt-0.5">Continuous heavy activity detected in Zone 4.</p>
+<span class="text-[10px] text-slate-400 font-medium">Today, 12:30 PM</span>
+</div>
+</div>
+<div class="sm:text-right flex-shrink-0">
+<span class="inline-block px-2.5 py-1 rounded-lg text-[10px] font-bold text-slate-600 bg-slate-200/80 border border-slate-300 whitespace-nowrap">Recorded</span>
+</div>
+</div>
+</div>
+</div>
+<!-- END: AlertsAndSafetyEventsHistoryCard -->
 </section>
 <!-- ============================================== -->
 <!-- TAB VIEW 5: WORKER PROFILE VIEW                -->
@@ -593,9 +657,11 @@
 <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden transition-opacity" id="helpModal">
 <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-red-200 transform transition-all animate-in fade-in zoom-in">
 <div class="flex items-start space-x-3.5">
-<div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 font-bold text-xl">
-          ⚠️
-        </div>
+<div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+<svg class="w-6 h-6 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
 <div>
 <h3 class="text-lg font-black text-slate-950">NEED IMMEDIATE ASSISTANCE?</h3>
 <p class="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -613,7 +679,7 @@
           Cancel
         </button>
 <button class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-black shadow-md transition-all" onclick="confirmHelpDispatch()">
-          🚨 Request Immediate Help
+          Request Immediate Help
         </button>
 </div>
 </div>
