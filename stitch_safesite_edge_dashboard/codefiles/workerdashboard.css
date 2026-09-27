@@ -1,0 +1,13 @@
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+
+.live-dot-pulse {
+  animation: subtlePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.heartbeat-icon {
+  animation: subtlePulse 1.2s ease-in-out infinite;
+}
+

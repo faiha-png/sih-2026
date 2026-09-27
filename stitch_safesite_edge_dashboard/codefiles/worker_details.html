@@ -1,5 +1,6 @@
 <html lang="en">
     <head>
+        <title>Workers</title>
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-sFcale=1.0" name="viewport"/>
         <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
@@ -11,11 +12,10 @@
     <body class="bg-surface font-body-md text-on-surface">
         <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50">
             <div class="p-md flex items-center gap-base">
-                <span class="material-symbols-outlined text-primary">safety_check</span>
-                <span class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase">Site Safety</span>
+                <span class="font-headline-md text-headline-md tracking-tight uppercase italic"><span class="text-on-surface">Thermi</span><span class="text-error">Q</span></span>
             </div>
             <nav class="flex-1 px-sm mt-md flex flex-col gap-xs" data-active-classes="bg-primary text-on-primary shadow-sm">
-                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="overview.html">
+                <a class="flex items-center h-12 px-md rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="overview" href="index.html">
                     <span class="material-symbols-outlined mr-md">dashboard</span>
                     Overview
                 </a>
@@ -34,13 +34,9 @@
                         <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-label-md text-label-md text-on-surface">Site Supervisor</span>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant">Construction Site A</span>
+                        <span class="font-label-md text-label-md text-on-surface">Manoj Sharma</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">Central Metro, Site 3</span>
                     </div>
-                </div>
-                <div class="flex items-center gap-xs text-[12px] font-label-sm text-on-surface-variant">
-                    <div class="w-2 h-2 rounded-full bg-primary"></div>
-                    System Online
                 </div>
             </div>
         </aside>
@@ -48,13 +44,9 @@
             <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
                 <div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">
                     <span class="material-symbols-outlined text-[18px]">location_on</span>
-                    Construction Site A
+                    Central Metro, Site 3
                 </div>
                 <div class="flex items-center gap-md">
-                    <div class="flex items-center gap-xs px-sm py-xs bg-primary/10 rounded-full border border-primary/20">
-                        <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span class="text-[11px] font-label-sm text-primary uppercase font-bold tracking-tighter">Live Feed</span>
-                    </div>
                     <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                         <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
                     </div>
@@ -62,6 +54,27 @@
             </header>
             <main class="pt-16 min-h-screen bg-surface">
                 <div class="flex flex-col w-full px-md pb-xl">
+                    <div class="flex flex-col gap-md" id="workers-table-view">
+                        <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Workers</h1>
+                        <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden overflow-x-auto">
+                            <table class="w-full text-left border-collapse min-w-[800px]">
+                                <thead class="bg-surface-container-high/50 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                                    <tr>
+                                        <th class="p-4 font-semibold">Worker</th>
+                                        <th class="p-4 font-semibold">Watch</th>
+                                        <th class="p-4 font-semibold">Status</th>
+                                        <th class="p-4 font-semibold">Risk</th>
+                                        <th class="p-4 font-semibold">Last Update</th>
+                                        <th class="p-4 font-semibold text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-body-md text-body-md text-on-surface" id="workers-table-body">
+                                    <!-- Rows injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="hidden" id="worker-detail-view">
                     <div class="flex items-center justify-between mb-lg bg-surface-container-low px-md py-sm rounded-xl shadow-sm">
                         <div class="flex items-center gap-sm">
                             <div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center relative shadow-[0_4px_12px_rgba(186,26,26,0.15)]">
@@ -81,7 +94,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-sm">
-                            <button onclick="window.location.href='overview.html'" class="h-12 px-md rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-xs shadow-sm">
+                            <button onclick="window.location.href='worker_details.html'" class="h-12 px-md rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-xs shadow-sm">
                                 <span class="material-symbols-outlined">arrow_back</span>
                                 Back to Workers
                             </button>
@@ -207,6 +220,7 @@
                                 <ul id="risk-reasons" class="space-y-sm"></ul>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <script src="data.js"></script>
