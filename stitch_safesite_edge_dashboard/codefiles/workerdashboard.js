@@ -67,7 +67,7 @@ function updateRestingButton(status) {
     btn.disabled = true;
     btn.setAttribute('aria-disabled', 'true');
     btn.className = "w-full px-5 py-3 rounded-xl text-slate-400 font-black text-sm bg-slate-200 cursor-not-allowed opacity-60 flex items-center justify-center space-x-2 shadow-none pointer-events-none";
-    btnText.textContent = "🛑 I'M RESTING NOW";
+    btnText.textContent = "I'M RESTING NOW";
     btn.title = "Resting action disabled: Worker status is SAFE";
   } else {
     // Enabled state for WARNING / INTERMEDIATE / CRITICAL workers
@@ -77,7 +77,7 @@ function updateRestingButton(status) {
 
     if (isRestingActive) {
       btn.className = "w-full px-5 py-3 rounded-xl text-white font-black text-sm shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 cursor-pointer";
-      btnText.textContent = "✓ I'M RESTING (STATUS ACTIVE)";
+      btnText.textContent = "I'M RESTING (STATUS ACTIVE)";
     } else {
       const s = String(status || '').toLowerCase().trim();
       if (s === 'warning' || s === 'intermediate') {
@@ -85,7 +85,7 @@ function updateRestingButton(status) {
       } else {
         btn.className = "w-full px-5 py-3 rounded-xl text-white font-black text-sm shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2 bg-danger-solid hover:bg-danger-dark cursor-pointer";
       }
-      btnText.textContent = "🛑 I'M RESTING NOW";
+      btnText.textContent = "I'M RESTING NOW";
     }
   }
 }
@@ -101,9 +101,9 @@ function toggleRestingState() {
   updateRestingButton(currentState);
 
   if (isRestingActive) {
-    showToast("Rest status active. Site supervisor notified you are taking shade.", "🛑");
+    showToast("Rest status active. Site supervisor notified you are taking shade.");
   } else {
-    showToast("Rest ended. Resuming telemetry tracking.", "⏱️");
+    showToast("Rest ended. Resuming telemetry tracking.");
   }
 }
 
@@ -127,7 +127,7 @@ function closeHelpModal() {
 
 function confirmHelpDispatch() {
   closeHelpModal();
-  showToast("🚨 Emergency help requested! Medic dispatched to Zone 4.", "🚨");
+  showToast(" Emergency help requested! Medic dispatched to Zone 4.");
   const dispatchNotice = document.getElementById('supervisorDispatchNotice');
   if (dispatchNotice) {
     dispatchNotice.textContent = "EMERGENCY DISPATCH IN TRANSIT: Medic & Supervisor en route to Zone 4.";
@@ -389,9 +389,95 @@ function setSafetyState(state) {
     if (valActivity) valActivity.textContent = "Light Labor";
   }
 
+  // Trigger critical risk alarm if transitioning to critical
+  handleRiskStateAlarm(state);
+
   // Update resting button to match newly selected safety status
   updateRestingButton(state);
   showToast(`Switched state to: ${state.toUpperCase()}`);
+}
+
+// =========================================================================
+// CRITICAL RISK ALARM (Web Audio API Synthesizer)
+// Professional, short, non-looping alert tone triggering ONLY on CRITICAL transition.
+// =========================================================================
+let hasTriggeredCriticalAlarm = false;
+let previousRiskState = null;
+
+function playCriticalAlertSound() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+
+    const ctx = new AudioContextClass();
+    if (ctx.state === 'suspended') {
+      ctx.resume().catch(() => {});
+    }
+
+    const now = ctx.currentTime;
+
+    // Tone 1: 880 Hz (A5), duration 0.20s with smooth envelope
+    const osc1 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(880, now);
+    gain1.gain.setValueAtTime(0, now);
+    gain1.gain.linearRampToValueAtTime(0.18, now + 0.02);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.20);
+    osc1.connect(gain1);
+    gain1.connect(ctx.destination);
+    osc1.start(now);
+    osc1.stop(now + 0.20);
+
+    // Tone 2: 659.25 Hz (E5), duration 0.28s after 0.05s gap
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(659.25, now + 0.25);
+    gain2.gain.setValueAtTime(0, now + 0.25);
+    gain2.gain.linearRampToValueAtTime(0.20, now + 0.27);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    osc2.start(now + 0.25);
+    osc2.stop(now + 0.55);
+
+    // Close audio context cleanly after alert completion
+    setTimeout(() => {
+      try { ctx.close(); } catch (e) {}
+    }, 1000);
+  } catch (err) {
+    // Autoplay prevented or audio unsupported: safely fail without breaking page
+  }
+}
+
+function handleRiskStateAlarm(newState) {
+  const normState = String(newState || '').toLowerCase().trim();
+  if (normState === 'critical') {
+    // Trigger alarm ONLY on transition into critical, not repeatedly while remaining critical
+    if (previousRiskState !== 'critical' && !hasTriggeredCriticalAlarm) {
+      playCriticalAlertSound();
+      hasTriggeredCriticalAlarm = true;
+    }
+  } else {
+    // Moving away from critical resets trigger flag so future transition to critical sounds again
+    hasTriggeredCriticalAlarm = false;
+  }
+  previousRiskState = normState;
+}
+
+// User interaction fallback for browsers blocking autoplay before first gesture
+if (typeof document !== 'undefined') {
+  const onFirstInteraction = () => {
+    if (currentState === 'critical' && !hasTriggeredCriticalAlarm) {
+      playCriticalAlertSound();
+      hasTriggeredCriticalAlarm = true;
+    }
+    document.removeEventListener('pointerdown', onFirstInteraction);
+    document.removeEventListener('keydown', onFirstInteraction);
+  };
+  document.addEventListener('pointerdown', onFirstInteraction, { once: true });
+  document.addEventListener('keydown', onFirstInteraction, { once: true });
 }
 
 // Initialize dashboard using Fathima (Worker #12) from data.js as single source of truth
@@ -440,8 +526,10 @@ function initDashboard() {
     }
 
     updateRestingButton(demoWorker.status);
+    handleRiskStateAlarm(demoWorker.status);
   } else {
     updateRestingButton(currentState);
+    handleRiskStateAlarm(currentState);
   }
 }
 
